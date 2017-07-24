@@ -39,7 +39,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 	<properties>
 		<javadoc.breadcrumbs><![CDATA[<a target="_top" href="https://aorepo.org/">AORepo</a>]]></javadoc.breadcrumbs>
 		<shortTitle />
-		<google.analytics.trackingId>TODO</google.analytics.trackingId>
+		<google.analytics.trackingId>UA-86871646-3</google.analytics.trackingId>
 		<!-- Parallel deployment -->
 		<maven.build.timestamp.format>yyyyMMdd.HHmmss</maven.build.timestamp.format>
 	</properties>
