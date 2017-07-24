@@ -50,10 +50,12 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 	<filter>
 		<filter-name>NoSessionFilter</filter-name>
 		<filter-class>com.aoindustries.servlet.filter.NoSessionFilter</filter-class>
+		<!-- No cookies required
 		<init-param>
 			<param-name>cookieNames</param-name>
 			<param-value>user</param-value>
 		</init-param>
+		-->
 	</filter>
 	<filter-mapping>
 		<filter-name>NoSessionFilter</filter-name>
