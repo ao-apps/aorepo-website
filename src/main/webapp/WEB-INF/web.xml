@@ -34,7 +34,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			If not provided or empty, the tracking script is not added.
 		</description>
 		<param-name>com.semanticcms.googleanalytics.GoogleAnalytics.trackingId</param-name>
-		<param-value><!-- TODO --></param-value>
+		<param-value>UA-86871646-3</param-value>
 	</context-param>
 	<context-param>
 		<description>
