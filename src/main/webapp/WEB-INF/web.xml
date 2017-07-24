@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+aorepo-website - The aorepo.org website.
+Copyright (C) 2017  AO Industries, Inc.
+    support@aoindustries.com
+    7262 Bull Pen Cir
+    Mobile, AL 36695
+
+This file is part of aorepo-website.
+
+aorepo-website is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+aorepo-website is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with aorepo.  If not, see <http://www.gnu.org/licenses />.
+-->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="false">
+	<display-name>aorepo.org</display-name>
+	<context-param>
+		<description>
+			The Google Analytics tracking ID for this site.
+			If not provided or empty, the tracking script is not added.
+		</description>
+		<param-name>com.semanticcms.googleanalytics.GoogleAnalytics.trackingId</param-name>
+		<param-value><!-- TODO --></param-value>
+	</context-param>
+	<context-param>
+		<description>
+			When set to "true" and the request is from localhost, enables desktop
+			integration mode by opening files on the server side instead of
+			downloading through the browser.
+		</description>
+		<param-name>com.semanticcms.openfile.servlet.OpenFile.enabled</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<!-- Prevents any sessions from being created -->
+	<filter>
+		<filter-name>NoSessionFilter</filter-name>
+		<filter-class>com.aoindustries.servlet.filter.NoSessionFilter</filter-class>
+		<init-param>
+			<param-name>cookieNames</param-name>
+			<param-value>user</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>NoSessionFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+</web-app>
