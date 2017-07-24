@@ -1,20 +1,20 @@
 # [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://aoindustries.com/) [AORepo](https://aorepo.org/)
 <p>
 	<a href="https://aoindustries.com/life-cycle#project-alpha">
-		<img src="https://aoindustries.com/ao-badges/project-alpha.svg" alt="project: alpha" />
+		<img src="https://aorepo.org/ao-badges/project-alpha.svg" alt="project: alpha" />
 	</a>
 	<a href="https://aoindustries.com/life-cycle#management-preview">
-		<img src="https://aoindustries.com/ao-badges/management-preview.svg" alt="management: preview" />
+		<img src="https://aorepo.org/ao-badges/management-preview.svg" alt="management: preview" />
 	</a>
 	<a href="https://aoindustries.com/life-cycle#packaging-developmental">
-		<img src="https://aoindustries.com/ao-badges/packaging-developmental.svg" alt="packaging: developmental" />
+		<img src="https://aorepo.org/ao-badges/packaging-developmental.svg" alt="packaging: developmental" />
 	</a>
 	<br />
 	<a href="http://semver.org/spec/v2.0.0.html">
-		<img src="https://aoindustries.com/ao-badges/semver-2.0.0.svg" alt="semantic versioning: 2.0.0" />
+		<img src="https://aorepo.org/ao-badges/semver-2.0.0.svg" alt="semantic versioning: 2.0.0" />
 	</a>
 	<a href="https://www.gnu.org/licenses/lgpl-3.0">
-		<img src="https://aoindustries.com/ao-badges/license-lgpl-3.0.svg" alt="license: LGPL v3" />
+		<img src="https://aorepo.org/ao-badges/license-lgpl-3.0.svg" alt="license: LGPL v3" />
 	</a>
 </p>
 
