@@ -27,7 +27,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 	<parent>
 		<groupId>org.aorepo</groupId>
 		<artifactId>aorepo-parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>1.0.0</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
@@ -201,7 +201,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<dependency>
 			<groupId>org.aorepo</groupId>
 			<artifactId>aorepo-parent-book</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 </project>
