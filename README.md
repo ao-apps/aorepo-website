@@ -22,7 +22,7 @@ The [aorepo.org](https://aorepo.org/) website.
 
 ## Project Links
 * [Project Home](https://aorepo.org/)
-* [Maven Repository](https://aorepo.org/maven2)
+* [Maven Repository](https://aorepo.org/maven2/)
 * [GitHub](https://github.com/aoindustries/aorepo-website)
 
 ## Contact Us
