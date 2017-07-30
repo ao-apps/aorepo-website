@@ -41,7 +41,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<shortTitle />
 		<google.analytics.trackingId>UA-86871646-3</google.analytics.trackingId>
 		<!-- Parallel deployment -->
-		<maven.build.timestamp.format>yyyyMMdd.HHmmss</maven.build.timestamp.format>
+		<!-- Unreliable with current hack: <maven.build.timestamp.format>yyyyMMdd.HHmmss</maven.build.timestamp.format> -->
 	</properties>
 
 	<name>AORepo Website</name>
@@ -82,7 +82,10 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 								<charset>UTF-8</charset>
 								<server>aorepo.org</server>
 								<!-- Parallel deployment -->
+								<!-- Unreliable with current hack:
 								<path>/ROOT##${maven.build.timestamp}-${project.version}</path>
+								-->
+								<path>/</path>
 								<update>true</update>
 								<url>https://aorepo.org/i8v5280YfMjUMTg9xvPujp/text</url>
 							</configuration>
