@@ -109,12 +109,12 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<dependency>
 				<groupId>com.semanticcms</groupId>
 				<artifactId>semanticcms-core-servlet</artifactId>
-				<version>1.12.0-SNAPSHOT</version>
+				<version>2.0.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.semanticcms</groupId>
 				<artifactId>semanticcms-core-taglib</artifactId>
-				<version>1.9.1-SNAPSHOT</version>
+				<version>2.0.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.semanticcms</groupId>
@@ -175,7 +175,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<dependency>
 			<groupId>com.semanticcms</groupId>
 			<artifactId>semanticcms-core-all</artifactId>
-			<version>1.4.0-SNAPSHOT</version>
+			<version>2.0.0-SNAPSHOT</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
