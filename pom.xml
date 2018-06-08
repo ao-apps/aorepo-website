@@ -25,15 +25,11 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.aorepo</groupId>
-		<artifactId>aorepo-parent</artifactId>
-		<version>1.1.0-SNAPSHOT</version>
+		<groupId>org.aorepo</groupId><artifactId>aorepo-parent</artifactId><version>1.1.0-SNAPSHOT</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
-	<groupId>org.aorepo</groupId>
-	<artifactId>website</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<groupId>org.aorepo</groupId><artifactId>website</artifactId><version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<properties>
@@ -62,9 +58,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<id>development</id>
 			<dependencies>
 				<dependency>
-					<groupId>com.semanticcms</groupId>
-					<artifactId>semanticcms-openfile-all</artifactId>
-					<version>2.0.0-SNAPSHOT</version>
+					<groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId><version>2.0.0-SNAPSHOT</version>
 					<type>pom</type>
 				</dependency>
 			</dependencies>
@@ -75,8 +69,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 				<pluginManagement>
 					<plugins>
 						<plugin>
-							<groupId>org.apache.tomcat.maven</groupId>
-							<artifactId>tomcat7-maven-plugin</artifactId>
+							<groupId>org.apache.tomcat.maven</groupId><artifactId>tomcat7-maven-plugin</artifactId>
 							<configuration>
 								<charset>UTF-8</charset>
 								<server>aorepo.org</server>
@@ -95,9 +88,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<dependencies>
 				<!-- Only include Google Analytics on production releases to not pollute with dev data -->
 				<dependency>
-					<groupId>com.semanticcms</groupId>
-					<artifactId>semanticcms-google-analytics</artifactId>
-					<version>2.0.0-SNAPSHOT</version>
+					<groupId>com.semanticcms</groupId><artifactId>semanticcms-google-analytics</artifactId><version>2.0.0-SNAPSHOT</version>
 				</dependency>
 			</dependencies>
 		</profile>
@@ -106,109 +97,74 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.semanticcms</groupId>
-				<artifactId>semanticcms-core-controller</artifactId>
-				<version>2.0.0-SNAPSHOT</version>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-controller</artifactId><version>2.0.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
-				<groupId>com.semanticcms</groupId>
-				<artifactId>semanticcms-core-taglib</artifactId>
-				<version>2.0.0-SNAPSHOT</version>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>2.0.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
-				<groupId>com.semanticcms</groupId>
-				<artifactId>semanticcms-tag-reference</artifactId>
-				<version>2.0.0-SNAPSHOT</version>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-tag-reference</artifactId><version>2.0.0-SNAPSHOT</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
 	<dependencies>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
+			<groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId><version>3.0.1</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- JSTL: See http://stackoverflow.com/questions/6094329/tomcat-7-and-jstl -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
+			<groupId>javax.servlet</groupId><artifactId>jstl</artifactId><version>1.2</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>javax.servlet.jsp-api</artifactId>
-			<version>2.2.1</version>
+			<groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId><version>2.2.1</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.glassfish.web</groupId>
-			<artifactId>jstl-impl</artifactId>
-			<version>1.2</version>
+			<groupId>org.glassfish.web</groupId><artifactId>jstl-impl</artifactId><version>1.2</version>
 			<exclusions>
 				<exclusion>
-					<groupId>javax.servlet</groupId>
-					<artifactId>servlet-api</artifactId>
+					<groupId>javax.servlet</groupId><artifactId>servlet-api</artifactId>
 				</exclusion>
 				<exclusion>
-					<groupId>javax.servlet.jsp</groupId>
-					<artifactId>jsp-api</artifactId>
+					<groupId>javax.servlet.jsp</groupId><artifactId>jsp-api</artifactId>
 				</exclusion>
 				<exclusion>
-					<groupId>javax.servlet.jsp.jstl</groupId>
-					<artifactId>jstl-api</artifactId>
+					<groupId>javax.servlet.jsp.jstl</groupId><artifactId>jstl-api</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>com.aoindustries</groupId>
-			<artifactId>ao-taglib</artifactId>
-			<version>3.0.0-SNAPSHOT</version>
+			<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>3.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId>
-			<artifactId>semanticcms-changelog-taglib</artifactId>
-			<version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-changelog-taglib</artifactId><version>2.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId>
-			<artifactId>semanticcms-core-all</artifactId>
-			<version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId><version>2.0.0-SNAPSHOT</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId>
-			<artifactId>semanticcms-news-all</artifactId>
-			<version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-news-all</artifactId><version>2.0.0-SNAPSHOT</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId>
-			<artifactId>semanticcms-section-all</artifactId>
-			<version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-section-all</artifactId><version>2.0.0-SNAPSHOT</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId>
-			<artifactId>semanticcms-theme-documentation</artifactId>
-			<version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation</artifactId><version>2.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId>
-			<artifactId>semanticcms-theme-documentation-style</artifactId>
-			<version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation-style</artifactId><version>2.0.0-SNAPSHOT</version>
 		</dependency>
 		<!-- Dependencies for book content -->
 		<dependency>
-			<groupId>org.aorepo</groupId>
-			<artifactId>aorepo-book</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<groupId>org.aorepo</groupId><artifactId>aorepo-book</artifactId><version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>org.aorepo</groupId>
-			<artifactId>aorepo-parent-book</artifactId>
-			<version>1.1.0-SNAPSHOT</version>
+			<groupId>org.aorepo</groupId><artifactId>aorepo-parent-book</artifactId><version>1.1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
