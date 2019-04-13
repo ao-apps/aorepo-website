@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 aorepo-website - The aorepo.org website.
-Copyright (C) 2017, 2018  AO Industries, Inc.
+Copyright (C) 2017, 2018, 2019  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -58,7 +58,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<id>development</id>
 			<dependencies>
 				<dependency>
-					<groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId><version>2.0.0-SNAPSHOT</version>
+					<groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId><version>1.2.4-SNAPSHOT</version>
 					<type>pom</type>
 				</dependency>
 			</dependencies>
@@ -88,25 +88,11 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<dependencies>
 				<!-- Only include Google Analytics on production releases to not pollute with dev data -->
 				<dependency>
-					<groupId>com.semanticcms</groupId><artifactId>semanticcms-google-analytics</artifactId><version>2.0.0-SNAPSHOT</version>
+					<groupId>com.semanticcms</groupId><artifactId>semanticcms-google-analytics</artifactId><version>1.0.3-validation-SNAPSHOT</version>
 				</dependency>
 			</dependencies>
 		</profile>
 	</profiles>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-controller</artifactId><version>2.0.0-SNAPSHOT</version>
-			</dependency>
-			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>2.0.0-SNAPSHOT</version>
-			</dependency>
-			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-tag-reference</artifactId><version>2.0.0-SNAPSHOT</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 	<dependencies>
 		<dependency>
@@ -139,25 +125,25 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>3.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-changelog-taglib</artifactId><version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-changelog-taglib</artifactId><version>1.0.2-validation-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId><version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId><version>1.4.0-SNAPSHOT</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-news-all</artifactId><version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-news-all</artifactId><version>1.1.4-SNAPSHOT</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-section-all</artifactId><version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-section-all</artifactId><version>1.2.4-validation-SNAPSHOT</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation</artifactId><version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation</artifactId><version>1.6.3-validation-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation-style</artifactId><version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation-style</artifactId><version>1.5.4-validation-SNAPSHOT</version>
 		</dependency>
 		<!-- Dependencies for book content -->
 		<dependency>
