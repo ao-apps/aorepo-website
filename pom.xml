@@ -25,7 +25,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.aorepo</groupId><artifactId>aorepo-parent</artifactId><version>1.1.1-validation-SNAPSHOT</version>
+		<groupId>org.aorepo</groupId><artifactId>aorepo-parent</artifactId><version>1.1.0-validation-SNAPSHOT</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
@@ -58,7 +58,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<id>development</id>
 			<dependencies>
 				<dependency>
-					<groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId><version>1.3.1-validation-SNAPSHOT</version>
+					<groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId><version>1.3.0-validation-SNAPSHOT</version>
 					<type>pom</type>
 				</dependency>
 			</dependencies>
@@ -88,7 +88,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<dependencies>
 				<!-- Only include Google Analytics on production releases to not pollute with dev data -->
 				<dependency>
-					<groupId>com.semanticcms</groupId><artifactId>semanticcms-google-analytics</artifactId><version>1.0.3-validation-SNAPSHOT</version>
+					<groupId>com.semanticcms</groupId><artifactId>semanticcms-google-analytics</artifactId><version>1.0.2-validation-SNAPSHOT</version>
 				</dependency>
 			</dependencies>
 		</profile>
@@ -122,35 +122,35 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>3.0.1-validation-SNAPSHOT</version>
+			<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>3.0.0-validation-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-changelog-taglib</artifactId><version>1.0.2-validation-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-changelog-taglib</artifactId><version>1.0.1-validation-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId><version>1.4.1-validation-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId><version>1.4.0-validation-SNAPSHOT</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-news-all</artifactId><version>1.2.1-validation-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-news-all</artifactId><version>1.2.0-validation-SNAPSHOT</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-section-all</artifactId><version>1.2.4-validation-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-section-all</artifactId><version>1.2.3-validation-SNAPSHOT</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation</artifactId><version>1.6.3-validation-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation</artifactId><version>1.6.2-validation-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation-style</artifactId><version>1.5.4-validation-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation-style</artifactId><version>1.5.3-validation-SNAPSHOT</version>
 		</dependency>
 		<!-- Dependencies for book content -->
 		<dependency>
 			<groupId>org.aorepo</groupId><artifactId>aorepo-book</artifactId><version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>org.aorepo</groupId><artifactId>aorepo-parent-book</artifactId><version>1.1.1-validation-SNAPSHOT</version>
+			<groupId>org.aorepo</groupId><artifactId>aorepo-parent-book</artifactId><version>1.1.0-validation-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
