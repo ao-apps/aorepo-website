@@ -56,11 +56,52 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<!-- Features only enabled during development time -->
 		<profile>
 			<id>development</id>
+			<dependencyManagement>
+				<dependencies>
+					<dependency>
+						<groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId><version>1.3.1-SNAPSHOT</version>
+						<type>pom</type>
+					</dependency>
+					<!-- TODO: semanticcms-openfile-bom -->
+					<dependency>
+						<groupId>com.semanticcms</groupId><artifactId>semanticcms-view-all</artifactId><version>1.4.4-SNAPSHOT</version>
+					</dependency>
+					<dependency>
+						<groupId>com.semanticcms</groupId><artifactId>semanticcms-view-all</artifactId><version>1.4.4-SNAPSHOT</version>
+						<type>pom</type>
+						<scope>import</scope>
+					</dependency>
+					<dependency>
+						<groupId>com.semanticcms</groupId><artifactId>semanticcms-view-tree</artifactId><version>1.4.4-SNAPSHOT</version>
+					</dependency>
+					<dependency>
+						<groupId>com.semanticcms</groupId><artifactId>semanticcms-view-tree</artifactId><version>1.4.4-SNAPSHOT</version>
+						<type>pom</type>
+						<scope>import</scope>
+					</dependency>
+					<dependency>
+						<groupId>com.semanticcms</groupId><artifactId>semanticcms-view-what-links-here</artifactId><version>1.4.4-SNAPSHOT</version>
+					</dependency>
+					<dependency>
+						<groupId>com.semanticcms</groupId><artifactId>semanticcms-view-what-links-here</artifactId><version>1.4.4-SNAPSHOT</version>
+						<type>pom</type>
+						<scope>import</scope>
+					</dependency>
+				</dependencies>
+			</dependencyManagement>
 			<dependencies>
 				<dependency>
-					<!-- TODO: semanticcms-openfile-bom -->
-					<groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId><version>1.3.1-SNAPSHOT</version>
+					<groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId>
 					<type>pom</type>
+				</dependency>
+				<dependency>
+					<groupId>com.semanticcms</groupId><artifactId>semanticcms-view-all</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>com.semanticcms</groupId><artifactId>semanticcms-view-tree</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>com.semanticcms</groupId><artifactId>semanticcms-view-what-links-here</artifactId>
 				</dependency>
 			</dependencies>
 		</profile>
