@@ -106,7 +106,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 								-->
 								<path>/</path>
 								<update>true</update>
-								<url>https://aorepo.org/i8v5280YfMjUMTg9xvPujp/text</url>
+								<url>${tomcat7-maven-plugin-aorepo.org}</url>
 							</configuration>
 						</plugin>
 					</plugins>
