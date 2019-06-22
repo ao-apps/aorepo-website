@@ -151,7 +151,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation</artifactId><version>1.7.0-validation-SNAPSHOT</version>
 			</dependency>
 			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation-style</artifactId><version>1.5.4-SNAPSHOT</version>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation-style</artifactId><version>1.7.0-validation-SNAPSHOT</version>
 			</dependency>
 			<!-- Transitive -->
 			<dependency>
