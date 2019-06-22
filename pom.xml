@@ -217,7 +217,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 				<scope>import</scope>
 			</dependency>
 			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-news-bom</artifactId><version>1.2.1-SNAPSHOT</version>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-news-bom</artifactId><version>1.2.1-validation-SNAPSHOT</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
