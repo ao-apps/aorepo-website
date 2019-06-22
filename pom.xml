@@ -203,10 +203,6 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>org.webjars</groupId><artifactId>jquery</artifactId><version>3.4.1</version>
 			</dependency>
 			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-pagegraph</artifactId><version>1.4.0-validation-SNAPSHOT</version>
-			</dependency>
-			<!-- Non-classpath Direct -->
-			<dependency>
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-bom</artifactId><version>1.4.1-validation-SNAPSHOT</version>
 				<type>pom</type>
 				<scope>import</scope>
@@ -220,6 +216,9 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-news-bom</artifactId><version>1.2.1-validation-SNAPSHOT</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-pagegraph</artifactId><version>1.4.0-validation-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-section-bom</artifactId><version>1.3.0-validation-SNAPSHOT</version>
@@ -258,13 +257,6 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<dependency>
 			<groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation-style</artifactId>
 		</dependency>
-		<!-- Books -->
-		<dependency>
-			<groupId>org.aorepo</groupId><artifactId>aorepo-book</artifactId><version>1.0.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.aorepo</groupId><artifactId>aorepo-parent-book</artifactId><version>1.2.0-validation-SNAPSHOT</version>
-		</dependency>
 		<!-- Non-classpath Direct -->
 		<dependency>
 			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId>
@@ -277,6 +269,13 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<dependency>
 			<groupId>com.semanticcms</groupId><artifactId>semanticcms-section-all</artifactId>
 			<type>pom</type>
+		</dependency>
+		<!-- Books -->
+		<dependency>
+			<groupId>org.aorepo</groupId><artifactId>aorepo-book</artifactId><version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aorepo</groupId><artifactId>aorepo-parent-book</artifactId><version>1.2.0-validation-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
