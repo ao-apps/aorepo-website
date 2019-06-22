@@ -207,7 +207,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			</dependency>
 			<!-- Non-classpath Direct -->
 			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-bom</artifactId><version>1.4.1-SNAPSHOT</version>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-bom</artifactId><version>1.4.1-validation-SNAPSHOT</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
