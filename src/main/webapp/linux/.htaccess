@@ -1,0 +1,11 @@
+# Any changes to this file should be installed to /var/www/aorepo.org/webapps/linux/.htaccess
+<IfModule dir_module>
+    DirectoryIndex index.html
+</IfModule>
+<IfModule autoindex_module>
+    Options +Indexes
+    IndexOptions Charset=UTF-8 FancyIndexing FoldersFirst HTMLTable NameWidth=* SuppressDescription VersionSort XHTML
+    IndexIgnore .htaccess
+    HeaderName header.html
+    IndexIgnore header.html
+</IfModule>
