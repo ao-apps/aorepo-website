@@ -40,7 +40,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<!-- Unreliable with current hack: <maven.build.timestamp.format>yyyyMMdd.HHmmss</maven.build.timestamp.format> -->
 	</properties>
 
-	<name>AORepo Website</name>
+	<name>aorepo.org</name>
 	<url>https://aorepo.org/</url>
 	<description>The aorepo.org website.</description>
 	<inceptionYear>2017</inceptionYear>
