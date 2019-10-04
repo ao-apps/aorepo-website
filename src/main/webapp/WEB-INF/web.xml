@@ -48,22 +48,13 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 	</context-param>
 
 	<!-- Block any servlet container URL rewriting -->
-	<filter>
-		<!--
-			This must be first in the filter chain, or at least before all filters that
-			perform any URL rewriting.  This filter specifically does not pass the URL
-			rewriting up the filter chain, as it is intended to block default session
-			 URL rewriting provided by servlet contains.
-		-->
-		<filter-name>NoEncodeUrlFilter</filter-name>
-		<filter-class>com.aoindustries.servlet.filter.NoEncodeUrlFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>NoEncodeUrlFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-		<dispatcher>REQUEST</dispatcher>
-		<dispatcher>ERROR</dispatcher>
-	</filter-mapping>
+	<session-config>
+		<cookie-config>
+			<http-only>true</http-only>
+			<!-- <secure>true</secure> -->
+		</cookie-config>
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
 
 	<!-- Perform final URI/IRI encoding -->
 	<filter>
