@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 aorepo-website - The aorepo.org website.
-Copyright (C) 2017, 2019  AO Industries, Inc.
+Copyright (C) 2017, 2019, 2020  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -58,7 +58,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 
 	<!-- Perform final URI/IRI encoding -->
 	<filter>
-		<filter-name>EncodeURIFilter</filter-name>
+		<filter-name>com.aoindustries.servlet.filter.EncodeURIFilter</filter-name>
 		<filter-class>com.aoindustries.servlet.filter.EncodeURIFilter</filter-class>
 		<description>
 			Encodes the URL to either RFC 3986 URI US-ASCII format or RFC 3987
@@ -76,7 +76,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		</init-param>
 	</filter>
 	<filter-mapping>
-		<filter-name>EncodeURIFilter</filter-name>
+		<filter-name>com.aoindustries.servlet.filter.EncodeURIFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 		<dispatcher>REQUEST</dispatcher>
 		<dispatcher>ERROR</dispatcher>
@@ -84,7 +84,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 
 	<!-- Prevents any sessions from being created -->
 	<filter>
-		<filter-name>NoSessionFilter</filter-name>
+		<filter-name>com.aoindustries.servlet.filter.NoSessionFilter</filter-name>
 		<filter-class>com.aoindustries.servlet.filter.NoSessionFilter</filter-class>
 		<init-param>
 			<param-name>cookieUrlParamPrefix</param-name>
@@ -98,7 +98,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		-->
 	</filter>
 	<filter-mapping>
-		<filter-name>NoSessionFilter</filter-name>
+		<filter-name>com.aoindustries.servlet.filter.NoSessionFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 		<dispatcher>REQUEST</dispatcher>
 		<dispatcher>ERROR</dispatcher>
