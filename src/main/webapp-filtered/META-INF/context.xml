@@ -22,8 +22,5 @@ You should have received a copy of the GNU Lesser General Public License
 along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 -->
 
-<!--
-	This file only exists so NetBeans knows the path to deploy the application.
-	Tomcat uses the filtered version in src/main/webapp-filtered/META-INF/contex.xml.
--->
+<!-- META-INF/context.xml is used for local development deployment only -->
 <Context path="/aorepo"/>

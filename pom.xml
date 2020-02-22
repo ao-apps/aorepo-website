@@ -58,9 +58,17 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-war-plugin</artifactId>
 				<configuration>
+					<packagingExcludes>
+						<!-- META-INF/context.xml is used for local development deployment only -->
+						META-INF/context.xml
+					</packagingExcludes>
 					<webResources>
 						<resource>
 							<directory>src/main/webapp</directory>
+							<excludes>
+								<!-- This file only exists so NetBeans knows the path to deploy the application. -->
+								<exclude>META-INF/context.xml</exclude>
+							</excludes>
 						</resource>
 						<resource>
 							<directory>src/main/webapp-filtered</directory>
