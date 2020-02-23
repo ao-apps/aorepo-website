@@ -23,4 +23,9 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 -->
 
 <!-- META-INF/context.xml is used for local development deployment only -->
-<Context path="/aorepo"/>
+<Context path="/aorepo">
+
+	<!-- Do not filter whitespace in development -->
+	<Parameter name="com.aoindustries.servlet.filter.TrimFilter.enabled" value="false" />
+
+</Context>
