@@ -58,12 +58,12 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 
 	<!-- Perform final URI/IRI encoding -->
 	<filter>
-		<filter-name>com.aoindustries.servlet.filter.EncodeURIFilter</filter-name>
-		<filter-class>com.aoindustries.servlet.filter.EncodeURIFilter</filter-class>
 		<description>
 			Encodes the URL to either RFC 3986 URI US-ASCII format or RFC 3987
 			IRI Unicode format.  Redirects are always formatted as RFC 3986 URI.
 		</description>
+		<filter-name>com.aoindustries.servlet.filter.EncodeURIFilter</filter-name>
+		<filter-class>com.aoindustries.servlet.filter.EncodeURIFilter</filter-class>
 		<init-param>
 			<description>
 				IRI support is disabled by default, and only recommended for
