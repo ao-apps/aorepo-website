@@ -25,7 +25,34 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 <!-- META-INF/context.xml is used for local development deployment only -->
 <Context path="/aorepo">
 
-	<!-- Do not filter whitespace in development -->
-	<Parameter name="com.aoindustries.servlet.filter.TrimFilter.enabled" value="false" />
+	<Parameter
+		description="Enable the concurrent subrequest processing feature (experimental)."
+		name="com.semanticcms.core.servlet.SemanticCMS.concurrentSubrequests" value="true"
+		override="false"
+	/>
+
+	<Parameter
+		description="Enable desktop integration mode by opening files on the server side."
+		name="com.semanticcms.openfile.servlet.OpenFile.enabled" value="true"
+		override="false"
+	/>
+
+	<Parameter
+		description="XHTML enabled in development"
+		name="com.aoindustries.encoding.Serialization.default" value="auto"
+		override="false"
+	/>
+
+	<Parameter
+		description="Do not filter whitespace in development"
+		name="com.aoindustries.servlet.filter.TrimFilter.enabled" value="false"
+		override="false"
+	/>
+
+	<Parameter
+		description="Only include Google Analytics on production releases to not pollute with dev data"
+		name="com.semanticcms.googleanalytics.GoogleAnalytics.trackingId" value=""
+		override="false"
+	/>
 
 </Context>

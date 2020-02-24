@@ -29,22 +29,43 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
   metadata-complete="false">
     <display-name>@{project.name} @{project.version}</display-name>
 	<description>@{project.description}</description>
+
 	<context-param>
 		<description>
 			The Google Analytics tracking ID for this site.
 			If not provided or empty, the tracking script is not added.
 		</description>
 		<param-name>com.semanticcms.googleanalytics.GoogleAnalytics.trackingId</param-name>
-		<param-value>@{com.semanticcms.googleanalytics.GoogleAnalytics.trackingId}</param-value>
+		<param-value>@{google.analytics.trackingId}</param-value>
 	</context-param>
+
 	<context-param>
-		<description>
-			When set to "true" and the request is from localhost, enables desktop
-			integration mode by opening files on the server side instead of
-			downloading through the browser.
-		</description>
-		<param-name>com.semanticcms.openfile.servlet.OpenFile.enabled</param-name>
-		<param-value>true</param-value>
+		<description><![CDATA[
+			Controls the selection of HTML versus XHTML.  Supports three values:
+			<ul>
+				<li><code>SGML</code> - Use HTML always</li>
+				<li><code>XML</code> - Use XHTML always</li>
+				<li><code>auto</code> - (default) - Automatically choose based on the client's <code>Accept</code> header</li>
+			</ul>
+		]]></description>
+		<param-name>com.aoindustries.encoding.Serialization.default</param-name>
+		<param-value>SGML</param-value>
+	</context-param>
+
+	<context-param>
+		<description><![CDATA[
+			Controls the default DOCTYPE for the application.  Supported values:
+			<ul>
+				<li><code>HTML5</code> - Use (X)HTML 5</li>
+				<li><code>STRICT</code> - Use (X)HTML strict</li>
+				<li><code>TRANSITIONAL</code> - Use (X)HTML transitional/loose</li>
+				<li><code>FRAMESET</code> - Use (X)HTML frameset</li>
+				<li><code>NONE</code> - No doctype</li>
+				<li><code>default</code> - (default) - Use (X)HTML 5</li>
+			</ul>
+		]]></description>
+		<param-name>com.aoindustries.encoding.Doctype.default</param-name>
+		<param-value>default</param-value>
 	</context-param>
 
 	<!-- Block any servlet container URL rewriting -->
@@ -103,4 +124,5 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<dispatcher>REQUEST</dispatcher>
 		<dispatcher>ERROR</dispatcher>
 	</filter-mapping>
+
 </web-app>
