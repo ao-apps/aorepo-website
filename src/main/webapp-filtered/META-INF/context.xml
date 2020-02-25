@@ -44,6 +44,12 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 	/>
 
 	<Parameter
+		description="Enable RFC 3987 IRI support in development"
+		name="com.aoindustries.servlet.filter.EncodeURIFilter.enableIRI" value="true"
+		override="false"
+	/>
+
+	<Parameter
 		description="Do not filter whitespace in development"
 		name="com.aoindustries.servlet.filter.TrimFilter.enabled" value="false"
 		override="false"
