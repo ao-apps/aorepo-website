@@ -153,6 +153,9 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<!-- Direct -->
 			<!-- Note: All non-bom transitive dependencies are listed - so only bom imports -->
 			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-mime-mappings</artifactId><version>1.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+			</dependency>
+			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>5.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 			</dependency>
 			<dependency>
@@ -262,6 +265,10 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<groupId>org.glassfish.web</groupId><artifactId>jstl-impl</artifactId>
 		</dependency>
 		<!-- Direct -->
+		<dependency>
+			<!-- Required for UTF-8 static resources -->
+			<groupId>com.aoindustries</groupId><artifactId>ao-mime-mappings</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId>
 		</dependency>
