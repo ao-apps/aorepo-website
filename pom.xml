@@ -216,10 +216,10 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>org.webjars</groupId><artifactId>d3js</artifactId><version>5.9.7</version>
 			</dependency>
 			<dependency>
-				<groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId><version>0.6.3</version>
+				<groupId>org.webjars.npm</groupId><artifactId>dagre-d3</artifactId><version>0.6.4</version>
 			</dependency>
 			<dependency>
-				<groupId>joda-time</groupId><artifactId>joda-time</artifactId><version>2.10.4</version>
+				<groupId>joda-time</groupId><artifactId>joda-time</artifactId><version>2.10.5</version>
 			</dependency>
 			<dependency>
 				<groupId>joda-time</groupId><artifactId>joda-time-jsptags</artifactId><version>1.1.1</version>
