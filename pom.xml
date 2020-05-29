@@ -118,7 +118,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			</dependency>
 			<!-- BOM -->
 			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-bom</artifactId><version>1.8.0${POST-SNAPSHOT}</version>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-bom</artifactId><version>1.9.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
