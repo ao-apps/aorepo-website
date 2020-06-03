@@ -86,24 +86,22 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<profile>
 			<id>release</id>
 			<build>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<groupId>org.apache.tomcat.maven</groupId><artifactId>tomcat7-maven-plugin</artifactId><version>2.2</version>
-							<configuration>
-								<charset>UTF-8</charset>
-								<server>aorepo.org</server>
-								<!-- Parallel deployment -->
-								<!-- Unreliable with current hack:
-								<path>/ROOT##${maven.build.timestamp}-${project.version}</path>
-								-->
-								<path>/</path>
-								<update>true</update>
-								<url>${tomcat7-maven-plugin-aorepo.org}</url>
-							</configuration>
-						</plugin>
-					</plugins>
-				</pluginManagement>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.tomcat.maven</groupId><artifactId>tomcat7-maven-plugin</artifactId>
+						<configuration>
+							<charset>UTF-8</charset>
+							<server>aorepo.org</server>
+							<!-- Parallel deployment -->
+							<!-- Unreliable with current hack:
+							<path>/ROOT##${maven.build.timestamp}-${project.version}</path>
+							-->
+							<path>/</path>
+							<update>true</update>
+							<url>${tomcat7-maven-plugin-aorepo.org}</url>
+						</configuration>
+					</plugin>
+				</plugins>
 			</build>
 		</profile>
 	</profiles>
