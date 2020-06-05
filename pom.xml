@@ -108,18 +108,6 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- Java EE -->
-			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>javaee-web-api-bom</artifactId><version>6.0.1${POST-SNAPSHOT}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<!-- BOM -->
-			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-bom</artifactId><version>1.9.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
 			<!-- Runtime Direct -->
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-mime-mappings</artifactId><version>1.0.0${POST-SNAPSHOT}</version>
@@ -127,6 +115,8 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>5.0.1${POST-SNAPSHOT}</version>
 			</dependency>
+			<!-- javaee-web-api-bom: <groupId>javax.servlet</groupId><artifactId>jstl</artifactId> -->
+			<!-- javaee-web-api-bom: <groupId>org.glassfish.web</groupId><artifactId>jstl-impl</artifactId> -->
 			<dependency>
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-changelog-taglib</artifactId><version>1.2.1${POST-SNAPSHOT}</version>
 			</dependency>
@@ -224,19 +214,21 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<dependency>
 				<groupId>org.webjars</groupId><artifactId>jquery</artifactId><version>3.5.1</version>
 			</dependency>
+			<!-- BOM -->
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>javaee-web-api-bom</artifactId><version>6.0.1${POST-SNAPSHOT}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-bom</artifactId><version>1.9.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
 	<dependencies>
-		<!-- Java EE -->
-		<dependency>
-			<groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
 		<!-- Runtime Direct -->
 		<dependency>
 			<!-- Required for UTF-8 static resources -->
