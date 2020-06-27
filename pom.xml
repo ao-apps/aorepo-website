@@ -89,7 +89,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 						<groupId>org.apache.tomcat.maven</groupId><artifactId>tomcat7-maven-plugin</artifactId>
 						<configuration>
 							<charset>UTF-8</charset>
-							<server>aorepo.org</server>
+							<server>tomcat7-maven-plugin-aorepo.org</server>
 							<!-- Parallel deployment -->
 							<!-- Unreliable with current hack:
 							<path>/ROOT##${maven.build.timestamp}-${project.version}</path>
