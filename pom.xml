@@ -57,6 +57,22 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<url>https://github.com/aoindustries/aorepo-website/issues</url>
 	</issueManagement>
 
+	<repositories>
+		<!-- Repository required here, too, so can find parent -->
+		<repository>
+			<id>aorepo-repository</id>
+			<url>https://aorepo.org/maven2/</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<profiles>
 		<profile>
 			<!-- Features only enabled during development time -->
