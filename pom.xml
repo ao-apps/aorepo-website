@@ -101,7 +101,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 			<dependencyManagement>
 				<dependencies>
 					<dependency>
-						<groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId><version>1.5.1-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+						<groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId><version>1.5.1${POST-SNAPSHOT}</version>
 						<type>pom</type>
 					</dependency>
 					<dependency>
