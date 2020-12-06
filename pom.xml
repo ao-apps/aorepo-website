@@ -114,10 +114,68 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 					</ignoredUnusedDeclaredDependencies>
 				</configuration>
 			</plugin>
+			<plugin>
+				<!--
+					Workaround "versions:display-plugin-updates" failing when "release" profile active.
+					See https://github.com/mojohaus/versions-maven-plugin/issues/354
+
+					A recent optimization moved all configuration of the maven-war-plugin to
+					profileManagement, to avoid the overhead of instantiating this plugin on
+					all projects.  This, however, has exposed us to this bug.
+				-->
+				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-war-plugin</artifactId>
+			</plugin>
+			<!-- Never generate Javadocs for snapshot, see https://stackoverflow.com/a/39139979 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId>
+				<configuration><skip>${build.isSnapshot}</skip></configuration>
+			</plugin>
+			<!-- Never attach sources for snapshot, see https://stackoverflow.com/a/39139979 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-source-plugin</artifactId>
+				<configuration><skipSource>${build.isSnapshot}</skipSource></configuration>
+			</plugin>
+			<!-- Never sign snapshot, see https://stackoverflow.com/a/39139979 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-gpg-plugin</artifactId>
+				<configuration><skip>${build.isSnapshot}</skip></configuration>
+			</plugin>
+			<!-- Never install snapshot, see https://stackoverflow.com/a/39139979 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-install-plugin</artifactId>
+				<configuration><skip>${build.isSnapshot}</skip></configuration>
+			</plugin>
+			<!-- Never deploy snapshot, see https://stackoverflow.com/a/39139979 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-deploy-plugin</artifactId>
+				<configuration><skip>${build.isSnapshot}</skip></configuration>
+			</plugin>
+			<!-- Never stage snapshot, see https://stackoverflow.com/a/39139979 -->
+			<!--
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId><artifactId>nexus-staging-maven-plugin</artifactId>
+				<configuration>
+					<skipNexusStagingDeployMojo>${build.isSnapshot}</skipNexusStagingDeployMojo>
+				</configuration>
+			</plugin>
+			-->
 		</plugins>
 	</build>
 
 	<profiles>
+		<profile>
+			<!-- Sadly, cannot use Maven properties in profile activation: ${project.build.sourceDirectory} -->
+			<id>war-attachClasses</id><activation><file><exists>src/main/java</exists></file></activation>
+			<build>
+				<plugins>
+					<!-- Never attach classes for snapshot, see https://stackoverflow.com/a/39139979 -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-war-plugin</artifactId>
+						<configuration><attachClasses>${build.notSnapshot}</attachClasses></configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 		<profile>
 			<!-- Features only enabled during development time -->
 			<id>development</id>
