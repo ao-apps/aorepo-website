@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 aorepo-website - The aorepo.org website.
-Copyright (C) 2020  AO Industries, Inc.
+Copyright (C) 2020, 2021  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -38,10 +38,6 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<init-param>
 			<param-name>xpoweredBy</param-name>
 			<param-value>false</param-value>
-		</init-param>
-		<init-param>
-			<param-name>mappedfile</param-name>
-			<param-value>true</param-value>
 		</init-param>
 		<init-param>
 			<param-name>compilerSourceVM</param-name>
