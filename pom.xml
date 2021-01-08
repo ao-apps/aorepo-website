@@ -241,6 +241,38 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>warmup-get-url</id><phase>deploy</phase><goals><goal>run</goal></goals>
+								<configuration>
+									<target>
+										<sleep seconds="10" />
+										<mkdir dir="${project.build.directory}/warmup-get-url"/>
+										<get
+											src="${publish-aorepo.org-warmup-get-url}"
+											dest="${project.build.directory}/warmup-get-url/response"
+											maxtime="120"
+											httpusecaches="false"
+										/>
+										<get
+											src="${publish-aorepo.org-warmup-get-url.2}"
+											dest="${project.build.directory}/warmup-get-url/response.2"
+											maxtime="120"
+											httpusecaches="false"
+										/>
+										<get
+											src="${publish-aorepo.org-warmup-get-url.3}"
+											dest="${project.build.directory}/warmup-get-url/response.3"
+											maxtime="120"
+											httpusecaches="false"
+										/>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
