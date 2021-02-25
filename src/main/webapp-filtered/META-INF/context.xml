@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 aorepo-website - The aorepo.org website.
-Copyright (C) 2017, 2020  AO Industries, Inc.
+Copyright (C) 2017, 2020, 2021  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -40,6 +40,12 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 	<Parameter
 		description="XHTML enabled in development"
 		name="com.aoindustries.encoding.Serialization.default" value="auto"
+		override="false"
+	/>
+
+	<Parameter
+		description="Tab indentation enabled in development"
+		name="com.aoindustries.html.Document.indent" value="true"
 		override="false"
 	/>
 
