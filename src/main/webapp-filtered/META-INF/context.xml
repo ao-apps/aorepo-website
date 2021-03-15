@@ -45,13 +45,13 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 
 	<Parameter
 		description="Automatic newline (and tab indentation when enabled) enabled in development"
-		name="com.aoindustries.html.Document.autonli" value="true"
+		name="com.aoindustries.html.servlet.DocumentEE.autonli" value="true"
 		override="false"
 	/>
 
 	<Parameter
 		description="Tab indentation enabled in development"
-		name="com.aoindustries.html.Document.indent" value="true"
+		name="com.aoindustries.html.servlet.DocumentEE.indent" value="true"
 		override="false"
 	/>
 
