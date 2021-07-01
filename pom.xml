@@ -259,24 +259,33 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 									<target>
 										<sleep seconds="10" />
 										<mkdir dir="${project.build.directory}/warmup-get-url"/>
-										<get
-											src="${publish-aorepo.org-warmup-get-url}"
-											dest="${project.build.directory}/warmup-get-url/response"
-											maxtime="120"
-											httpusecaches="false"
-										/>
-										<get
-											src="${publish-aorepo.org-warmup-get-url.2}"
-											dest="${project.build.directory}/warmup-get-url/response.2"
-											maxtime="120"
-											httpusecaches="false"
-										/>
-										<get
-											src="${publish-aorepo.org-warmup-get-url.3}"
-											dest="${project.build.directory}/warmup-get-url/response.3"
-											maxtime="120"
-											httpusecaches="false"
-										/>
+										<retry retrycount="12" retrydelay="15">
+											<get
+												retries="1"
+												src="${publish-aorepo.org-warmup-get-url}"
+												dest="${project.build.directory}/warmup-get-url/response"
+												maxtime="120"
+												httpusecaches="false"
+											/>
+										</retry>
+										<retry retrycount="12" retrydelay="15">
+											<get
+												retries="1"
+												src="${publish-aorepo.org-warmup-get-url.2}"
+												dest="${project.build.directory}/warmup-get-url/response.2"
+												maxtime="120"
+												httpusecaches="false"
+											/>
+										</retry>
+										<retry retrycount="12" retrydelay="15">
+											<get
+												retries="1"
+												src="${publish-aorepo.org-warmup-get-url.3}"
+												dest="${project.build.directory}/warmup-get-url/response.3"
+												maxtime="120"
+												httpusecaches="false"
+											/>
+										</retry>
 									</target>
 								</configuration>
 							</execution>
