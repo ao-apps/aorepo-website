@@ -138,11 +138,6 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-source-plugin</artifactId>
 				<configuration><skipSource>${build.isSnapshot}</skipSource></configuration>
 			</plugin>
-			<!-- Never sign snapshot, see https://stackoverflow.com/a/39139979 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-gpg-plugin</artifactId>
-				<configuration><skip>${build.isSnapshot}</skip></configuration>
-			</plugin>
 			<!-- Never install snapshot, see https://stackoverflow.com/a/39139979 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-install-plugin</artifactId>
