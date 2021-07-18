@@ -196,7 +196,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 					<scope>runtime</scope>
 				</dependency>
 				<dependency>
-					<groupId>com.semanticcms</groupId><artifactId>semanticcms-view-tree</artifactId><version>1.6.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+					<groupId>com.semanticcms</groupId><artifactId>semanticcms-view-tree</artifactId><version>1.6.0${POST-SNAPSHOT}</version>
 					<scope>runtime</scope>
 				</dependency>
 				<dependency>
