@@ -137,11 +137,6 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 				-->
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-war-plugin</artifactId>
 			</plugin>
-			<!-- Never generate Javadocs for snapshot, see https://stackoverflow.com/a/39139979 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId>
-				<configuration><skip>${build.isSnapshot}</skip></configuration>
-			</plugin>
 			<!-- Never attach sources for snapshot, see https://stackoverflow.com/a/39139979 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-source-plugin</artifactId>
