@@ -171,19 +171,6 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 
 	<profiles>
 		<profile>
-			<!-- Sadly, cannot use Maven properties in profile activation: ${project.build.sourceDirectory} -->
-			<id>war-attachClasses</id><activation><file><exists>src/main/java</exists></file></activation>
-			<build>
-				<plugins>
-					<!-- Never attach classes for snapshot, see https://stackoverflow.com/a/39139979 -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-war-plugin</artifactId>
-						<configuration><attachClasses>${build.notSnapshot}</attachClasses></configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
 			<!-- Features only enabled during development time -->
 			<id>development</id>
 			<dependencies>
