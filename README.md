@@ -1,4 +1,4 @@
-# [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://github.com/aoindustries) [AORepo](https://github.com/aoindustries/aorepo) / [Website](https://github.com/aoindustries/aorepo-website)
+# [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://github.com/ao-apps) [AORepo](https://github.com/ao-apps/aorepo) / [Website](https://github.com/ao-apps/aorepo-website)
 
 [![project: alpha](https://aorepo.org/ao-badges/project-alpha.svg)](https://aoindustries.com/life-cycle#project-alpha)
 [![management: preview](https://aorepo.org/ao-badges/management-preview.svg)](https://aoindustries.com/life-cycle#management-preview)
@@ -7,7 +7,7 @@
 [![semantic versioning: 2.0.0](https://aorepo.org/ao-badges/semver-2.0.0.svg)](http://semver.org/spec/v2.0.0.html)
 [![license: LGPL v3](https://aorepo.org/ao-badges/license-lgpl-3.0.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
-[![Build](https://github.com/aoindustries/aorepo-website/workflows/Build/badge.svg?branch=master)](https://github.com/aoindustries/aorepo-website/actions?query=workflow%3ABuild)
+[![Build](https://github.com/ao-apps/aorepo-website/workflows/Build/badge.svg?branch=master)](https://github.com/ao-apps/aorepo-website/actions?query=workflow%3ABuild)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=master&project=org.aorepo%3Awebsite&metric=alert_status)](https://sonarcloud.io/dashboard?branch=master&id=org.aorepo%3Awebsite)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=master&project=org.aorepo%3Awebsite&metric=ncloc)](https://sonarcloud.io/component_measures?branch=master&id=org.aorepo%3Awebsite&metric=ncloc)  
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=org.aorepo%3Awebsite&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=master&id=org.aorepo%3Awebsite&metric=Reliability)
@@ -19,7 +19,7 @@ The [aorepo.org](https://aorepo.org/) website.
 ## Project Links
 * [Project Home](https://aorepo.org/)
 * [Maven Repository](https://aorepo.org/maven2/)
-* [GitHub](https://github.com/aoindustries/aorepo-website)
+* [GitHub](https://github.com/ao-apps/aorepo-website)
 
 ## Contact Us
 For questions or support, please [contact us](https://aoindustries.com/contact):

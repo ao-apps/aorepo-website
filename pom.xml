@@ -39,7 +39,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<!-- Unreliable with current hack: <maven.build.timestamp.format>yyyyMMdd.HHmmss</maven.build.timestamp.format> -->
 		<!-- SonarQube -->
 		<sonar.projectKey>${project.groupId}:${project.artifactId}</sonar.projectKey>
-		<sonar.organization>aoindustries</sonar.organization>
+		<sonar.organization>ao-apps</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
@@ -72,20 +72,20 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/aoindustries/aorepo-website.git</connection>
-		<developerConnection>scm:git:git@github.com:aoindustries/aorepo-website.git</developerConnection>
-		<url>https://github.com/aoindustries/aorepo-website</url>
+		<connection>scm:git:git://github.com/ao-apps/aorepo-website.git</connection>
+		<developerConnection>scm:git:git@github.com:ao-apps/aorepo-website.git</developerConnection>
+		<url>https://github.com/ao-apps/aorepo-website</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/aoindustries/aorepo-website/issues</url>
+		<url>https://github.com/ao-apps/aorepo-website/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>GitHub Actions</system>
-		<url>https://github.com/aoindustries/aorepo-website/actions</url>
+		<url>https://github.com/ao-apps/aorepo-website/actions</url>
 	</ciManagement>
 
 	<repositories>
