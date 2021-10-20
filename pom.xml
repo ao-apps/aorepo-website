@@ -268,7 +268,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<dependencies>
 			<!-- Direct -->
 			<dependency>
-				<groupId>org.aorepo</groupId><artifactId>aorepo-book</artifactId><version>0.2.2-SNAPSHOT</version>
+				<groupId>org.aorepo</groupId><artifactId>aorepo-book</artifactId><version>0.2.2-POST-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>org.aorepo</groupId><artifactId>aorepo-parent-book</artifactId><version>1.17.3-POST-SNAPSHOT</version>
