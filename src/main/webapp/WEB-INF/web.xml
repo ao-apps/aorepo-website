@@ -99,4 +99,7 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<dispatcher>ERROR</dispatcher>
 	</filter-mapping>
 
+	<!-- Error Pages -->
+	<!-- Using error pages from semanticcms-theme-documentation:/META-INF/web-fragment.xml -->
+
 </web-app>
