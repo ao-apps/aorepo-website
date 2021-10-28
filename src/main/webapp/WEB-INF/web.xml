@@ -68,12 +68,16 @@ along with aorepo.  If not, see <http://www.gnu.org/licenses />.
 		<param-value>default</param-value>
 	</context-param>
 
-	<!-- Block any servlet container URL rewriting -->
+	<!-- Require all session attributes to be Serializable -->
+	<distributable />
+
 	<session-config>
+		<session-timeout>30</session-timeout>
 		<cookie-config>
 			<http-only>true</http-only>
-			<!-- <secure>true</secure> -->
+			<secure>@{session.cookie.secure}</secure>
 		</cookie-config>
+		<!-- Block any servlet container URL rewriting -->
 		<tracking-mode>COOKIE</tracking-mode>
 	</session-config>
 
