@@ -25,14 +25,17 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.aorepo</groupId><artifactId>aorepo-parent</artifactId><version>1.17.3-POST-SNAPSHOT</version>
+		<groupId>org.aorepo</groupId><artifactId>aorepo-parent</artifactId><version>1.17.4-SNAPSHOT</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
-	<groupId>org.aorepo</groupId><artifactId>website</artifactId><version>0.2.2-POST-SNAPSHOT</version>
+	<groupId>org.aorepo</groupId><artifactId>website</artifactId><version>0.2.3-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<properties>
+		<!-- Default Repository URLs -->
+		<aorepo-repository.url>https://aorepo.org/maven2/</aorepo-repository.url>
+
 		<module.name>org.aorepo.website</module.name>
 		<google.analytics.trackingId>UA-86871646-3</google.analytics.trackingId>
 		<!-- Parallel deployment -->
@@ -94,7 +97,7 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 		<!-- Repository required here, too, so can find parent -->
 		<repository>
 			<id>aorepo-repository</id>
-			<url>https://aorepo.org/maven2/</url>
+			<url>${aorepo-repository.url}</url>
 			<releases>
 				<enabled>true</enabled>
 				<updatePolicy>never</updatePolicy>
@@ -274,10 +277,10 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 		<dependencies>
 			<!-- Direct -->
 			<dependency>
-				<groupId>org.aorepo</groupId><artifactId>aorepo-book</artifactId><version>0.2.2-POST-SNAPSHOT</version>
+				<groupId>org.aorepo</groupId><artifactId>aorepo-book</artifactId><version>0.2.3-SNAPSHOT</version>
 			</dependency>
 			<dependency>
-				<groupId>org.aorepo</groupId><artifactId>aorepo-parent-book</artifactId><version>1.17.3-POST-SNAPSHOT</version>
+				<groupId>org.aorepo</groupId><artifactId>aorepo-parent-book</artifactId><version>1.17.4-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId><version>1.9.1${POST-SNAPSHOT}</version>
