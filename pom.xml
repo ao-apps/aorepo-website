@@ -33,9 +33,6 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 	<packaging>war</packaging>
 
 	<properties>
-		<!-- Default Repository URLs -->
-		<aorepo-repository.url>https://aorepo.org/maven2/</aorepo-repository.url>
-
 		<module.name>org.aorepo.website</module.name>
 		<google.analytics.trackingId>UA-86871646-3</google.analytics.trackingId>
 		<!-- Parallel deployment -->
@@ -92,22 +89,6 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 		<system>GitHub Actions</system>
 		<url>https://github.com/ao-apps/aorepo-website/actions</url>
 	</ciManagement>
-
-	<repositories>
-		<!-- Repository required here, too, so can find parent -->
-		<repository>
-			<id>aorepo-repository</id>
-			<url>${aorepo-repository.url}</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>never</updatePolicy>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>daily</updatePolicy>
-			</snapshots>
-		</repository>
-	</repositories>
 
 	<build>
 		<plugins>
