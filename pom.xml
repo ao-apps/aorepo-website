@@ -37,6 +37,8 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 		<google.analytics.trackingId>UA-86871646-3</google.analytics.trackingId>
 		<!-- Parallel deployment -->
 		<!-- Unreliable with current hack: <maven.build.timestamp.format>yyyyMMdd.HHmmss</maven.build.timestamp.format> -->
+		<!-- Never stage snapshot, see https://stackoverflow.com/a/39139979 -->
+		<nexus.skipNexusStagingDeployMojo>${build.isSnapshot}</nexus.skipNexusStagingDeployMojo>
 		<!-- SonarQube -->
 		<sonar.projectKey>${project.groupId}:${project.artifactId}</sonar.projectKey>
 		<sonar.organization>ao-apps</sonar.organization>
@@ -138,15 +140,6 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-deploy-plugin</artifactId>
 				<configuration><skip>${build.isSnapshot}</skip></configuration>
 			</plugin>
-			<!-- Never stage snapshot, see https://stackoverflow.com/a/39139979 -->
-			<!--
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId><artifactId>nexus-staging-maven-plugin</artifactId>
-				<configuration>
-					<skipNexusStagingDeployMojo>${build.isSnapshot}</skipNexusStagingDeployMojo>
-				</configuration>
-			</plugin>
-			-->
 		</plugins>
 	</build>
 
