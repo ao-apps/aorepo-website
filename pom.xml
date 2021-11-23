@@ -88,9 +88,30 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 	</issueManagement>
 
 	<ciManagement>
+		<system>Jenkins</system>
+		<url>https://jenkins.aoindustries.com/job/ao/job/aorepo/job/website/</url>
+	</ciManagement>
+	<!-- Only one allowed in POM:
+	<ciManagement>
 		<system>GitHub Actions</system>
 		<url>https://github.com/ao-apps/aorepo-website/actions</url>
 	</ciManagement>
+	-->
+
+	<repositories>
+		<!-- Repository required here, too, so can find parent -->
+		<repository>
+			<id>aorepo-repository</id>
+			<url>https://aorepo.org/maven2/</url>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</releases>
+			<snapshots>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+		</repository>
+	</repositories>
 
 	<build>
 		<plugins>
@@ -125,17 +146,12 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 				-->
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-war-plugin</artifactId>
 			</plugin>
-			<!-- Never attach sources for snapshot, see https://stackoverflow.com/a/39139979 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-source-plugin</artifactId>
-				<configuration><skipSource>${build.isSnapshot}</skipSource></configuration>
-			</plugin>
 			<!-- Never install snapshot, see https://stackoverflow.com/a/39139979 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-install-plugin</artifactId>
 				<configuration><skip>${build.isSnapshot}</skip></configuration>
 			</plugin>
-			<!-- Never deploy snapshot, see https://stackoverflow.com/a/39139979 -->
+			<!-- Do not deploy snapshot (unless "jenkins" profile below), see https://stackoverflow.com/a/39139979 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId><artifactId>maven-deploy-plugin</artifactId>
 				<configuration><skip>${build.isSnapshot}</skip></configuration>
@@ -170,36 +186,22 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 				</dependency>
 			</dependencies>
 		</profile>
-		<!--
-			Required for bug "requireActiveProfile ignores inherited profiles in submodules":
-			https://issues.apache.org/jira/browse/MENFORCER-226
-		-->
 		<profile>
-			<id>POST-SNAPSHOT</id>
-			<properties>
-				<POST-SNAPSHOT>-POST-SNAPSHOT</POST-SNAPSHOT>
-			</properties>
+			<id>jenkins</id>
+			<build>
+				<plugins>
+					<!-- Always deploy Jenkins builds -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-deploy-plugin</artifactId>
+						<configuration><skip>false</skip></configuration>
+					</plugin>
+				</plugins>
+			</build>
 		</profile>
 		<profile>
 			<id>publish</id>
 			<build>
 				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-enforcer-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>publish-enforce-profiles</id><goals><goal>enforce</goal></goals>
-								<configuration>
-									<rules>
-										<requireActiveProfile>
-											<message>"publish" requires "POST-SNAPSHOT" profile</message>
-											<profiles>POST-SNAPSHOT</profiles>
-										</requireActiveProfile>
-									</rules>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
 					<plugin>
 						<groupId>org.apache.tomcat.maven</groupId><artifactId>tomcat7-maven-plugin</artifactId>
 						<executions>
@@ -229,13 +231,31 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 										<sleep seconds="10" />
 										<mkdir dir="${project.build.directory}/warmup-get-url" />
 										<retry retrycount="12" retrydelay="15000">
-											<get retries="1" src="${publish-aorepo.org-warmup-get-url}" dest="${project.build.directory}/warmup-get-url/response" maxtime="120" httpusecaches="false" />
+											<get
+												retries="1"
+												src="${publish-aorepo.org-warmup-get-url}"
+												dest="${project.build.directory}/warmup-get-url/response"
+												maxtime="120"
+												httpusecaches="false"
+											/>
 										</retry>
 										<retry retrycount="12" retrydelay="15000">
-											<get retries="1" src="${publish-aorepo.org-warmup-get-url.2}" dest="${project.build.directory}/warmup-get-url/response.2" maxtime="120" httpusecaches="false" />
+											<get
+												retries="1"
+												src="${publish-aorepo.org-warmup-get-url.2}"
+												dest="${project.build.directory}/warmup-get-url/response.2"
+												maxtime="120"
+												httpusecaches="false"
+											/>
 										</retry>
 										<retry retrycount="12" retrydelay="15000">
-											<get retries="1" src="${publish-aorepo.org-warmup-get-url.3}" dest="${project.build.directory}/warmup-get-url/response.3" maxtime="120" httpusecaches="false" />
+											<get
+												retries="1"
+												src="${publish-aorepo.org-warmup-get-url.3}"
+												dest="${project.build.directory}/warmup-get-url/response.3"
+												maxtime="120"
+												httpusecaches="false"
+											/>
 										</retry>
 									</target>
 								</configuration>
