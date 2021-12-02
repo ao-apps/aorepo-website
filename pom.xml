@@ -187,18 +187,6 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 			</dependencies>
 		</profile>
 		<profile>
-			<id>jenkins</id>
-			<build>
-				<plugins>
-					<!-- Always deploy Jenkins builds -->
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-deploy-plugin</artifactId>
-						<configuration><skip>false</skip></configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
 			<id>publish</id>
 			<build>
 				<plugins>
