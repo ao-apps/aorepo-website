@@ -45,6 +45,10 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<!-- Require secure session cookies in production -->
 		<session.cookie.secure>true</session.cookie.secure>
+		<!-- Default publish settings -->
+		<publish-aorepo.org-warmup-get-url>https://aorepo.org/</publish-aorepo.org-warmup-get-url>
+		<publish-aorepo.org-warmup-get-url.2>https://aorepo.org/sitemap-index.xml</publish-aorepo.org-warmup-get-url.2>
+		<publish-aorepo.org-warmup-get-url.3>https://aorepo.org/?view=news</publish-aorepo.org-warmup-get-url.3>
 	</properties>
 
 	<name>aorepo.org</name>
