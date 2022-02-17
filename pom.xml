@@ -269,7 +269,7 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 				<groupId>org.aorepo</groupId><artifactId>aorepo-parent-book</artifactId><version>1.17.4-POST-SNAPSHOT</version>
 			</dependency>
 			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId><version>1.9.1${POST-SNAPSHOT}</version>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId><version>1.9.2${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-news-all</artifactId><version>1.7.1${POST-SNAPSHOT}</version>
