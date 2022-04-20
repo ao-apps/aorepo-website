@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 aorepo-website - The aorepo.org website.
-Copyright (C) 2017, 2020, 2021  AO Industries, Inc.
+Copyright (C) 2017, 2020, 2021, 2022  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -25,52 +25,52 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 <!-- META-INF/context.xml is used for local development deployment only -->
 <Context path="/aorepo">
 
-	<Parameter
-		description="Enable the concurrent subrequest processing feature (experimental)."
-		name="com.semanticcms.core.servlet.SemanticCMS.concurrentSubrequests" value="true"
-		override="false"
-	/>
+  <Parameter
+    description="Enable the concurrent subrequest processing feature (experimental)."
+    name="com.semanticcms.core.servlet.SemanticCMS.concurrentSubrequests" value="true"
+    override="false"
+  />
 
-	<Parameter
-		description="Enable desktop integration mode by opening files on the server side."
-		name="com.semanticcms.openfile.servlet.OpenFile.enabled" value="true"
-		override="false"
-	/>
+  <Parameter
+    description="Enable desktop integration mode by opening files on the server side."
+    name="com.semanticcms.openfile.servlet.OpenFile.enabled" value="true"
+    override="false"
+  />
 
-	<Parameter
-		description="XHTML enabled in development"
-		name="com.aoapps.encoding.Serialization.default" value="auto"
-		override="false"
-	/>
+  <Parameter
+    description="XHTML enabled in development"
+    name="com.aoapps.encoding.Serialization.default" value="auto"
+    override="false"
+  />
 
-	<Parameter
-		description="Automatic newline (and tab indentation when enabled) enabled in development"
-		name="com.aoapps.html.servlet.DocumentEE.autonli" value="true"
-		override="false"
-	/>
+  <Parameter
+    description="Automatic newline (and tab indentation when enabled) enabled in development"
+    name="com.aoapps.html.servlet.DocumentEE.autonli" value="true"
+    override="false"
+  />
 
-	<Parameter
-		description="Tab indentation enabled in development"
-		name="com.aoapps.html.servlet.DocumentEE.indent" value="true"
-		override="false"
-	/>
+  <Parameter
+    description="Tab indentation enabled in development"
+    name="com.aoapps.html.servlet.DocumentEE.indent" value="true"
+    override="false"
+  />
 
-	<Parameter
-		description="Enable RFC 3987 IRI support in development"
-		name="com.aoapps.servlet.filter.EncodeURIFilter.enableIRI" value="true"
-		override="false"
-	/>
+  <Parameter
+    description="Enable RFC 3987 IRI support in development"
+    name="com.aoapps.servlet.filter.EncodeURIFilter.enableIRI" value="true"
+    override="false"
+  />
 
-	<Parameter
-		description="Do not filter whitespace in development"
-		name="com.aoapps.servlet.filter.TrimFilter.enabled" value="false"
-		override="false"
-	/>
+  <Parameter
+    description="Do not filter whitespace in development"
+    name="com.aoapps.servlet.filter.TrimFilter.enabled" value="false"
+    override="false"
+  />
 
-	<Parameter
-		description="Only include Google Analytics on production releases to not pollute with dev data"
-		name="com.semanticcms.googleanalytics.GoogleAnalytics.trackingId" value=""
-		override="false"
-	/>
+  <Parameter
+    description="Only include Google Analytics on production releases to not pollute with dev data"
+    name="com.semanticcms.googleanalytics.GoogleAnalytics.trackingId" value=""
+    override="false"
+  />
 
 </Context>

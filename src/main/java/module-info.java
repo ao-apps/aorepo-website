@@ -1,6 +1,6 @@
 /*
  * aorepo-website - The aorepo.org website.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -21,10 +21,10 @@
  * along with aorepo-website.  If not, see <https://www.gnu.org/licenses/>.
  */
 module org.aorepo.website {
-	// Direct
-	requires org.aorepo.book; // <groupId>org.aorepo</groupId><artifactId>aorepo-book</artifactId>
-	requires org.aorepo.parent.book; // <groupId>org.aorepo</groupId><artifactId>aorepo-parent-book</artifactId>
-	requires com.semanticcms.core.all; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId>
-	requires com.semanticcms.news.all; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-news-all</artifactId>
-	requires com.semanticcms.section.all; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-all</artifactId>
+  // Direct
+  requires org.aorepo.book; // <groupId>org.aorepo</groupId><artifactId>aorepo-book</artifactId>
+  requires org.aorepo.parent.book; // <groupId>org.aorepo</groupId><artifactId>aorepo-parent-book</artifactId>
+  requires com.semanticcms.core.all; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId>
+  requires com.semanticcms.news.all; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-news-all</artifactId>
+  requires com.semanticcms.section.all; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-all</artifactId>
 }

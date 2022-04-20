@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 aorepo-website - The aorepo.org website.
-Copyright (C) 2017, 2020, 2021  AO Industries, Inc.
+Copyright (C) 2017, 2020, 2021, 2022  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -22,13 +22,13 @@ You should have received a copy of the GNU Lesser General Public License
 along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 -->
 <books
-	xmlns="https://semanticcms.com/core/servlet/"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="https://semanticcms.com/core/servlet/ https://semanticcms.com/core/servlet/books-1.0.xsd"
-	rootBook="/"
+  xmlns="https://semanticcms.com/core/servlet/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://semanticcms.com/core/servlet/ https://semanticcms.com/core/servlet/books-1.0.xsd"
+  rootBook="/"
 >
-	<book name="/" cvsworkDirectory="~/maven2/ao/aorepo/book/src/main/resources-filtered/META-INF/resources" />
-	<book name="/parent" cvsworkDirectory="~/maven2/ao/aorepo/parent/book/src/main/resources-filtered/META-INF/resources/parent">
-		<parent book="/" page="/index.jspx" shortTitle="Parent" />
-	</book>
+  <book name="/" cvsworkDirectory="~/maven2/ao/aorepo/book/src/main/resources-filtered/META-INF/resources" />
+  <book name="/parent" cvsworkDirectory="~/maven2/ao/aorepo/parent/book/src/main/resources-filtered/META-INF/resources/parent">
+    <parent book="/" page="/index.jspx" shortTitle="Parent" />
+  </book>
 </books>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 aorepo-website - The aorepo.org website.
-Copyright (C) 2017, 2020  AO Industries, Inc.
+Copyright (C) 2017, 2020, 2022  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -23,7 +23,7 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
 -->
 
 <!--
-	This file only exists so NetBeans knows the path to deploy the application.
-	Tomcat uses the filtered version in src/main/webapp-filtered/META-INF/contex.xml.
+  This file only exists so NetBeans knows the path to deploy the application.
+  Tomcat uses the filtered version in src/main/webapp-filtered/META-INF/contex.xml.
 -->
 <Context path="/aorepo"/>

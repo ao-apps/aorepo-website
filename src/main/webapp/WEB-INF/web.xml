@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 aorepo-website - The aorepo.org website.
-Copyright (C) 2017, 2019, 2020, 2021  AO Industries, Inc.
+Copyright (C) 2017, 2019, 2020, 2021, 2022  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -28,82 +28,82 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
   version="3.1"
   metadata-complete="false">
     <display-name>@{project.name} @{project.version}</display-name>
-	<description>@{project.description}</description>
+  <description>@{project.description}</description>
 
-	<context-param>
-		<description>
-			The Google Analytics tracking ID for this site.
-			If not provided or empty, the tracking script is not added.
-		</description>
-		<param-name>com.semanticcms.googleanalytics.GoogleAnalytics.trackingId</param-name>
-		<param-value>@{google.analytics.trackingId}</param-value>
-	</context-param>
+  <context-param>
+    <description>
+      The Google Analytics tracking ID for this site.
+      If not provided or empty, the tracking script is not added.
+    </description>
+    <param-name>com.semanticcms.googleanalytics.GoogleAnalytics.trackingId</param-name>
+    <param-value>@{google.analytics.trackingId}</param-value>
+  </context-param>
 
-	<context-param>
-		<description><![CDATA[
-			Controls the selection of HTML versus XHTML.  Supports three values:
-			<ul>
-				<li><code>SGML</code> - Use HTML always</li>
-				<li><code>XML</code> - Use XHTML always</li>
-				<li><code>auto</code> - (default) - Automatically choose based on the client's <code>Accept</code> header</li>
-			</ul>
-		]]></description>
-		<param-name>com.aoapps.encoding.Serialization.default</param-name>
-		<param-value>SGML</param-value>
-	</context-param>
+  <context-param>
+    <description><![CDATA[
+      Controls the selection of HTML versus XHTML.  Supports three values:
+      <ul>
+        <li><code>SGML</code> - Use HTML always</li>
+        <li><code>XML</code> - Use XHTML always</li>
+        <li><code>auto</code> - (default) - Automatically choose based on the client's <code>Accept</code> header</li>
+      </ul>
+    ]]></description>
+    <param-name>com.aoapps.encoding.Serialization.default</param-name>
+    <param-value>SGML</param-value>
+  </context-param>
 
-	<context-param>
-		<description><![CDATA[
-			Controls the default DOCTYPE for the application.  Supported values:
-			<ul>
-				<li><code>HTML5</code> - Use (X)HTML 5</li>
-				<li><code>STRICT</code> - Use (X)HTML strict</li>
-				<li><code>TRANSITIONAL</code> - Use (X)HTML transitional/loose</li>
-				<li><code>FRAMESET</code> - Use (X)HTML frameset</li>
-				<li><code>NONE</code> - No doctype</li>
-				<li><code>default</code> - (default) - Use (X)HTML 5</li>
-			</ul>
-		]]></description>
-		<param-name>com.aoapps.encoding.Doctype.default</param-name>
-		<param-value>default</param-value>
-	</context-param>
+  <context-param>
+    <description><![CDATA[
+      Controls the default DOCTYPE for the application.  Supported values:
+      <ul>
+        <li><code>HTML5</code> - Use (X)HTML 5</li>
+        <li><code>STRICT</code> - Use (X)HTML strict</li>
+        <li><code>TRANSITIONAL</code> - Use (X)HTML transitional/loose</li>
+        <li><code>FRAMESET</code> - Use (X)HTML frameset</li>
+        <li><code>NONE</code> - No doctype</li>
+        <li><code>default</code> - (default) - Use (X)HTML 5</li>
+      </ul>
+    ]]></description>
+    <param-name>com.aoapps.encoding.Doctype.default</param-name>
+    <param-value>default</param-value>
+  </context-param>
 
-	<!-- Require all session attributes to be Serializable -->
-	<distributable />
+  <!-- Require all session attributes to be Serializable -->
+  <distributable />
 
-	<session-config>
-		<session-timeout>30</session-timeout>
-		<cookie-config>
-			<http-only>true</http-only>
-			<secure>@{session.cookie.secure}</secure>
-		</cookie-config>
-		<!-- Block any servlet container URL rewriting -->
-		<tracking-mode>COOKIE</tracking-mode>
-	</session-config>
+  <session-config>
+    <session-timeout>30</session-timeout>
+    <cookie-config>
+      <http-only>true</http-only>
+      <secure>@{session.cookie.secure}</secure>
+    </cookie-config>
+    <!-- Block any servlet container URL rewriting -->
+    <tracking-mode>COOKIE</tracking-mode>
+  </session-config>
 
-	<!-- Prevents any sessions from being created -->
-	<filter>
-		<filter-name>com.aoapps.servlet.filter.NoSessionFilter</filter-name>
-		<filter-class>com.aoapps.servlet.filter.NoSessionFilter</filter-class>
-		<init-param>
-			<param-name>cookieUrlParamPrefix</param-name>
-			<param-value>cookie:</param-value>
-		</init-param>
-		<!-- No cookies required
-		<init-param>
-			<param-name>cookieNames</param-name>
-			<param-value>user</param-value>
-		</init-param>
-		-->
-	</filter>
-	<filter-mapping>
-		<filter-name>com.aoapps.servlet.filter.NoSessionFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-		<dispatcher>REQUEST</dispatcher>
-		<dispatcher>ERROR</dispatcher>
-	</filter-mapping>
+  <!-- Prevents any sessions from being created -->
+  <filter>
+    <filter-name>com.aoapps.servlet.filter.NoSessionFilter</filter-name>
+    <filter-class>com.aoapps.servlet.filter.NoSessionFilter</filter-class>
+    <init-param>
+      <param-name>cookieUrlParamPrefix</param-name>
+      <param-value>cookie:</param-value>
+    </init-param>
+    <!-- No cookies required
+    <init-param>
+      <param-name>cookieNames</param-name>
+      <param-value>user</param-value>
+    </init-param>
+    -->
+  </filter>
+  <filter-mapping>
+    <filter-name>com.aoapps.servlet.filter.NoSessionFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>ERROR</dispatcher>
+  </filter-mapping>
 
-	<!-- Error Pages -->
-	<!-- Using error pages from semanticcms-theme-documentation:/META-INF/web-fragment.xml -->
+  <!-- Error Pages -->
+  <!-- Using error pages from semanticcms-theme-documentation:/META-INF/web-fragment.xml -->
 
 </web-app>
