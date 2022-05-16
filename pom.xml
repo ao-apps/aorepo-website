@@ -29,7 +29,7 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>org.aorepo</groupId><artifactId>website</artifactId><version>0.3.0-SNAPSHOT</version>
+  <groupId>org.aorepo</groupId><artifactId>website</artifactId><version>0.3.0</version>
   <packaging>war</packaging>
 
   <properties>
@@ -83,7 +83,7 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <connection>scm:git:git://github.com/ao-apps/aorepo-website.git</connection>
     <developerConnection>scm:git:git@github.com:ao-apps/aorepo-website.git</developerConnection>
     <url>https://github.com/ao-apps/aorepo-website</url>
-    <tag>HEAD</tag>
+    <tag>website-0.3.0</tag>
   </scm>
 
   <issueManagement>
