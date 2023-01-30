@@ -138,10 +138,10 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
         <configuration>
           <ignoreNonCompile>true</ignoreNonCompile>
           <usedDependencies>
-            <!-- Direct -->
-            <dependency>com.semanticcms:semanticcms-core-all</dependency><!-- Required for module-info.java -->
-            <dependency>com.semanticcms:semanticcms-news-all</dependency><!-- Required for module-info.java -->
-            <dependency>com.semanticcms:semanticcms-section-all</dependency><!-- Required for module-info.java -->
+            <!-- Required for module-info.java -->
+            <dependency>com.semanticcms:semanticcms-core-all</dependency>
+            <dependency>com.semanticcms:semanticcms-news-all</dependency>
+            <dependency>com.semanticcms:semanticcms-section-all</dependency>
           </usedDependencies>
           <ignoredUnusedDeclaredDependencies>
             <!-- Books -->
