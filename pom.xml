@@ -43,6 +43,7 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <!-- Require secure session cookies in production -->
     <session.cookie.secure>true</session.cookie.secure>
     <!-- Default publish settings -->
+    <publish-aorepo.org-ssh-path>/usr/bin/ssh</publish-aorepo.org-ssh-path>
     <publish-aorepo.org-warmup-get-url>https://aorepo.org/</publish-aorepo.org-warmup-get-url>
     <publish-aorepo.org-warmup-get-url.2>https://aorepo.org/sitemap-index.xml</publish-aorepo.org-warmup-get-url.2>
     <publish-aorepo.org-warmup-get-url.3>https://aorepo.org/?view=news</publish-aorepo.org-warmup-get-url.3>
@@ -227,6 +228,20 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
           <plugin>
             <groupId>org.apache.maven.plugins</groupId><artifactId>maven-antrun-plugin</artifactId>
             <executions>
+              <execution>
+                <id>delete-tomcat-work</id><phase>deploy</phase><goals><goal>run</goal></goals>
+                <configuration>
+                  <target>
+                    <sleep seconds="1" />
+                    <exec executable="${publish-aorepo.org-ssh-path}" failonerror="true">
+                      <arg value="-oControlPath=none" />
+                      <arg value="-T" />
+                      <arg value="${publish-aorepo.org-tomcat-username}@${publish-aorepo.org-tomcat-hostname}"/>
+                      <arg value="find '${publish-aorepo.org-tomcat-work}' '(' -name '*.java' -or -name '*.class' ')' -delete" />
+                    </exec>
+                  </target>
+                </configuration>
+              </execution>
               <execution>
                 <id>warmup-sleep</id><phase>deploy</phase><goals><goal>run</goal></goals>
                 <configuration>
