@@ -133,14 +133,13 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
       <plugin>
         <groupId>org.apache.maven.plugins</groupId><artifactId>maven-dependency-plugin</artifactId>
         <configuration>
-          <ignoreNonCompile>true</ignoreNonCompile>
           <usedDependencies>
             <!-- Required for module-info.java -->
             <dependency>com.semanticcms:semanticcms-core-all</dependency>
             <dependency>com.semanticcms:semanticcms-news-all</dependency>
             <dependency>com.semanticcms:semanticcms-section-all</dependency>
           </usedDependencies>
-          <ignoredUnusedDeclaredDependencies>
+          <ignoredUnusedDeclaredDependencies combine.children="append">
             <!-- Books -->
             <dependency>org.aorepo:*-book:jar</dependency>
           </ignoredUnusedDeclaredDependencies>
@@ -500,9 +499,9 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
         <groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation-style</artifactId><version>1.9.1${POST-SNAPSHOT}</version>
       </dependency>
       <!-- javaee-web-api-bom: <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-impl</artifactId> -->
-      <!-- BOM -->
+      <!-- Imports -->
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>javaee-web-api-bom</artifactId><version>7.0.1${POST-SNAPSHOT}</version>
+        <groupId>com.aoapps</groupId><artifactId>javaee-web-api-bom</artifactId><version>7.0.1-POST-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -543,6 +542,12 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <dependency>
       <groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation</artifactId>
       <scope>runtime</scope>
+    </dependency>
+    <!-- Imports (Reactor build order only) -->
+    <dependency>
+      <groupId>com.aoapps</groupId><artifactId>javaee-web-api-bom</artifactId><version>7.0.1-POST-SNAPSHOT</version>
+      <type>pom</type>
+      <exclusions><exclusion><artifactId>*</artifactId><groupId>*</groupId></exclusion></exclusions>
     </dependency>
   </dependencies>
 </project>
