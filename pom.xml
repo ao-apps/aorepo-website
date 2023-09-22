@@ -36,7 +36,10 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <!-- Must be set to ${git.commit.time} for snapshots or ISO 8601 timestamp for releases. -->
     <project.build.outputTimestamp>${git.commit.time}</project.build.outputTimestamp>
     <module.name>org.aorepo.website</module.name>
-    <google.analytics.trackingId>UA-86871646-3</google.analytics.trackingId>
+
+    <!-- The Google Analytics 4 (GA4) Measurement ID for this site. -->
+    <google.analytics.trackingId>G-MYNTSHLBEB</google.analytics.trackingId>
+
     <!-- Parallel deployment -->
     <!-- Unreliable with current hack: <maven.build.timestamp.format>yyyyMMdd.HHmmss</maven.build.timestamp.format> -->
     <!-- Never stage snapshot, see https://stackoverflow.com/a/39139979 -->
