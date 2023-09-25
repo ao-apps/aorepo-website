@@ -29,12 +29,12 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>org.aorepo</groupId><artifactId>website</artifactId><version>0.5.0</version>
+  <groupId>org.aorepo</groupId><artifactId>website</artifactId><version>0.5.0-POST-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <properties>
     <!-- Must be set to ${git.commit.time} for snapshots or ISO 8601 timestamp for releases. -->
-    <project.build.outputTimestamp>2023-09-25T09:02:57Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>${git.commit.time}</project.build.outputTimestamp>
     <module.name>org.aorepo.website</module.name>
 
     <!-- The Google Analytics 4 (GA4) Measurement ID for this site. -->
@@ -85,7 +85,7 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <connection>scm:git:git://github.com/ao-apps/aorepo-website.git</connection>
     <developerConnection>scm:git:git@github.com:ao-apps/aorepo-website.git</developerConnection>
     <url>https://github.com/ao-apps/aorepo-website</url>
-    <tag>website-0.5.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
