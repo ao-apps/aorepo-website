@@ -188,7 +188,7 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
       </properties>
       <dependencies>
         <dependency>
-          <groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId><version>1.6.1${POST-SNAPSHOT}</version>
+          <groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId><version>1.7.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
           <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -287,7 +287,7 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
         <groupId>org.aorepo</groupId><artifactId>aorepo-parent-book</artifactId><version>1.24.1-SNAPSHOT</version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId><version>1.11.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId><version>1.12.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
         <groupId>com.semanticcms</groupId><artifactId>semanticcms-news-all</artifactId><version>1.8.0${POST-SNAPSHOT}</version>
@@ -451,9 +451,6 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
       </dependency>
       <dependency>
         <groupId>joda-time</groupId><artifactId>joda-time-jsptags</artifactId><version>1.1.1</version>
-      </dependency>
-      <dependency>
-        <groupId>org.webjars.npm</groupId><artifactId>jquery</artifactId><version>3.7.1</version>
       </dependency>
       <dependency>
         <groupId>org.webjars.npm</groupId><artifactId>lodash</artifactId><version>4.17.21</version>
