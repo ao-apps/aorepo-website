@@ -1,0 +1,17 @@
+User-agent: *
+# Ignore directory sort parameters
+Disallow: /linux/*/?*
+Disallow: /maven2/*/?*
+# Ignore repodata
+Disallow: /*/repodata/
+# Ignore signatures and checksums
+Disallow: /maven2/*.asc$
+Disallow: /maven2/*.md5$
+Disallow: /maven2/*.sha1$
+# Ignore snapshots
+Disallow: /linux/*~snapshot*.rpm$
+Disallow: /maven2/*-SNAPSHOT/
+# Ignore old artifacts before moved to Central Repository
+Disallow: /maven2/com/pragmatickm/
+Disallow: /maven2/com/semanticcms/
+Sitemap: https://aorepo.org/sitemap-index.xml
