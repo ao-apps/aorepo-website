@@ -1,6 +1,8 @@
 User-agent: *
 # Ignore directory sort parameters
+Disallow: /linux/?*
 Disallow: /linux/*/?*
+Disallow: /maven2/?*
 Disallow: /maven2/*/?*
 # Ignore repodata
 Disallow: /*/repodata/
