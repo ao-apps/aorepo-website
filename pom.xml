@@ -40,13 +40,14 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <!-- The Google Analytics 4 (GA4) Measurement ID for this site. -->
     <google.analytics.trackingId>G-MYNTSHLBEB</google.analytics.trackingId>
 
-    <!-- Parallel deployment -->
-    <!-- Unreliable with current hack: <maven.build.timestamp.format>yyyyMMdd.HHmmss</maven.build.timestamp.format> -->
     <!-- Never stage snapshot, see https://stackoverflow.com/a/39139979 -->
     <nexus.skipNexusStagingDeployMojo>${build.isSnapshot}</nexus.skipNexusStagingDeployMojo>
     <!-- Require secure session cookies in production -->
     <session.cookie.secure>true</session.cookie.secure>
     <!-- Default publish settings -->
+    <publish.tomcat7-maven-plugin.path>/</publish.tomcat7-maven-plugin.path>
+    <publish.tomcat7-maven-plugin.update>true</publish.tomcat7-maven-plugin.update>
+    <publish.delete-tomcat-work.phase>deploy</publish.delete-tomcat-work.phase>
     <publish-aorepo.org-ssh-path>/usr/bin/ssh</publish-aorepo.org-ssh-path>
     <publish-aorepo.org-warmup-get-url>https://aorepo.org/</publish-aorepo.org-warmup-get-url>
     <publish-aorepo.org-warmup-get-url.2>https://aorepo.org/sitemap-index.xml</publish-aorepo.org-warmup-get-url.2>
@@ -206,6 +207,17 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
       </dependencies>
     </profile>
     <profile>
+      <id>jenkins</id>
+      <properties>
+        <!-- Parallel deployment -->
+        <!-- Note: Tomcat server.xml/Host/autoDeploy must be set to "true" -->
+        <!-- Note: Tomcat server.xml/Host/undeployOldVersions must be set to "true" to clean-up old versions -->
+        <publish.tomcat7-maven-plugin.path>/ROOT##build-${jenkins.buildNumber}</publish.tomcat7-maven-plugin.path>
+        <publish.tomcat7-maven-plugin.update>false</publish.tomcat7-maven-plugin.update>
+        <publish.delete-tomcat-work.phase>none</publish.delete-tomcat-work.phase>
+      </properties>
+    </profile>
+    <profile>
       <id>publish</id>
       <build>
         <plugins>
@@ -217,13 +229,10 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
                 <configuration>
                   <charset>UTF-8</charset>
                   <server>tomcat7-maven-plugin-aorepo.org</server>
-                  <!-- Parallel deployment -->
-                  <!-- Unreliable with current hack:
-                  <path>/ROOT##${maven.build.timestamp}-${project.version}</path>
-                  -->
-                  <path>/</path>
-                  <update>true</update>
+                  <path>${publish.tomcat7-maven-plugin.path}</path>
+                  <update>${publish.tomcat7-maven-plugin.update}</update>
                   <url>${tomcat7-maven-plugin-aorepo.org}</url>
+                  <!-- TODO: How to fail build when deploy failed with "FAIL - Failed to deploy application at context path"? -->
                 </configuration>
               </execution>
             </executions>
@@ -232,7 +241,7 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
             <groupId>org.apache.maven.plugins</groupId><artifactId>maven-antrun-plugin</artifactId>
             <executions>
               <execution>
-                <id>delete-tomcat-work</id><phase>deploy</phase><goals><goal>run</goal></goals>
+                <id>delete-tomcat-work</id><phase>${publish.delete-tomcat-work.phase}</phase><goals><goal>run</goal></goals>
                 <configuration>
                   <target>
                     <sleep seconds="1" />
