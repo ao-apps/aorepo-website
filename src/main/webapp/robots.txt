@@ -10,6 +10,8 @@ Disallow: /*/repodata/
 Disallow: /maven2/*.asc$
 Disallow: /maven2/*.md5$
 Disallow: /maven2/*.sha1$
+# Ignore Maven meta data
+Disallow /maven2/*/maven-metadata.xml$
 # Ignore snapshots
 Disallow: /linux/*~snapshot*.rpm$
 Disallow: /maven2/*-SNAPSHOT/
