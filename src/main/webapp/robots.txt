@@ -16,5 +16,6 @@ Disallow: /maven2/*/maven-metadata.xml$
 Disallow: /linux/*~snapshot*.rpm$
 Disallow: /maven2/*-SNAPSHOT/
 # Ignore old artifacts before moved to Central Repository
-Disallow: /maven2/com/
+Disallow: /maven2/com/pragmatickm/
+Disallow: /maven2/com/semanticcms/
 Sitemap: https://aorepo.org/sitemap-index.xml
