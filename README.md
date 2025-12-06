@@ -7,7 +7,7 @@
 [![semantic versioning: 2.0.0](https://aorepo.org/ao-badges/semver-2.0.0.svg)](https://semver.org/spec/v2.0.0.html)
 [![license: LGPL v3](https://aorepo.org/ao-badges/license-lgpl-3.0.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
-[![Build](https://github.com/ao-apps/aorepo-website/workflows/Build/badge.svg?branch=master)](https://github.com/ao-apps/aorepo-website/actions?query=workflow%3ABuild)
+[![Build](https://github.com/ao-apps/aorepo-website/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/ao-apps/aorepo-website/actions?query=workflow%3ABuild)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=master&project=org.aorepo%3Awebsite&metric=alert_status)](https://sonarcloud.io/dashboard?branch=master&id=org.aorepo%3Awebsite)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=master&project=org.aorepo%3Awebsite&metric=ncloc)](https://sonarcloud.io/component_measures?branch=master&id=org.aorepo%3Awebsite&metric=ncloc)  
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=org.aorepo%3Awebsite&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=master&id=org.aorepo%3Awebsite&metric=Reliability)
