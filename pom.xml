@@ -135,10 +135,6 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
             <!-- Books -->
             <dependency>org.aorepo:*-book:jar</dependency>
           </ignoredUnusedDeclaredDependencies>
-          <ignoredDependencies>
-            <!-- No "module-info.java" in some release builds -->
-            <dependency>com.aoapps:ao-fluent-html-any</dependency>
-          </ignoredDependencies>
         </configuration>
       </plugin>
       <plugin>
