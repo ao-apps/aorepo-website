@@ -29,27 +29,31 @@ def upstreamProjects = [
 
   // "development" profile
   // Runtime Direct
-  '../semanticcms-1.x/openfile/all', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId>
-  '../semanticcms-1.x/view-all', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-view-all</artifactId>
-  '../semanticcms-1.x/view-tree', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-view-tree</artifactId>
-  '../semanticcms-1.x/view-what-links-here', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-view-what-links-here</artifactId>
+  '../semanticcms-2.x/openfile/all', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-openfile-all</artifactId>
+  '../semanticcms-2.x/view-all', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-view-all</artifactId>
+  '../semanticcms-2.x/view-tree', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-view-tree</artifactId>
+  '../semanticcms-2.x/view-what-links-here', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-view-what-links-here</artifactId>
 
   // Direct
   'book', // <groupId>org.aorepo</groupId><artifactId>aorepo-book</artifactId>
   'parent-book', // <groupId>org.aorepo</groupId><artifactId>aorepo-parent-book</artifactId>
-  '../semanticcms-1.x/core/all', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId>
-  '../semanticcms-1.x/news/all', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-news-all</artifactId>
-  '../semanticcms-1.x/section/all', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-all</artifactId>
+  '../semanticcms-2.x/core/all', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-all</artifactId>
+  '../semanticcms-2.x/news/all', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-news-all</artifactId>
+  '../semanticcms-2.x/section/all', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-all</artifactId>
 
   // Runtime Direct
-  '../oss/mime-mappings-javaee', // <groupId>com.aoapps</groupId><artifactId>ao-mime-mappings</artifactId>
-  '../oss/servlet-filter-javaee', // <groupId>com.aoapps</groupId><artifactId>ao-servlet-filter</artifactId>
-  '../semanticcms-1.x/google-analytics', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-google-analytics</artifactId>
-  '../semanticcms-1.x/theme-documentation', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation</artifactId>
+  '../oss/mime-mappings', // <groupId>com.aoapps</groupId><artifactId>ao-mime-mappings</artifactId>
+  '../oss/servlet-filter', // <groupId>com.aoapps</groupId><artifactId>ao-servlet-filter</artifactId>
+  '../semanticcms-2.x/google-analytics', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-google-analytics</artifactId>
+  '../semanticcms-2.x/theme-documentation', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-theme-documentation</artifactId>
 
   // BOM
-  '../oss/javaee-web-api-bom', // <groupId>com.aoapps</groupId><artifactId>javaee-web-api-bom</artifactId>
+  '../oss/jakartaee-web-profile-bom', // <groupId>com.aoapps</groupId><artifactId>jakartaee-web-profile-bom</artifactId>
 ]
+
+// Java 17
+def buildJdks = ['17', '21'] // Changes must be copied to matrix axes!
+def testJdks = ['17', '21'] // Changes must be copied to matrix axes!
 
 /******************************************************************************************
  *                                                                                        *
@@ -853,7 +857,7 @@ or any build that adds or removes build artifacts."""
         axes {
           axis {
             name 'jdk'
-            values '11', '17', '21' // buildJdks
+            values '17', '21' // buildJdks
           }
         }
         stages {
@@ -913,11 +917,11 @@ or any build that adds or removes build artifacts."""
         axes {
           axis {
             name 'jdk'
-            values '11', '17', '21' // buildJdks
+            values '17', '21' // buildJdks
           }
           axis {
             name 'testJdk'
-            values '11', '17', '21' // testJdks
+            values '17', '21' // testJdks
           }
         }
         stages {
