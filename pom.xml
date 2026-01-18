@@ -52,10 +52,8 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <!-- Require secure session cookies in production -->
     <session.cookie.secure>true</session.cookie.secure>
     <!-- Default publish settings -->
-    <publish.tomcat7-maven-plugin.path>/</publish.tomcat7-maven-plugin.path>
-    <publish.tomcat7-maven-plugin.update>true</publish.tomcat7-maven-plugin.update>
-    <publish.delete-tomcat-work.phase>deploy</publish.delete-tomcat-work.phase>
-    <publish-aorepo.org-ssh-path>/usr/bin/ssh</publish-aorepo.org-ssh-path>
+    <publish.tomcat7-maven-plugin.parallel.deployment.version>${user.name}-${current.datetime}</publish.tomcat7-maven-plugin.parallel.deployment.version>
+    <publish-aorepo.org-GetParallelDeploymentVersion-url>https://aorepo.org/ao-servlet-util/tomcat/GetParallelDeploymentVersion</publish-aorepo.org-GetParallelDeploymentVersion-url>
     <publish-aorepo.org-warmup-get-url>https://aorepo.org/</publish-aorepo.org-warmup-get-url>
     <publish-aorepo.org-warmup-get-url.2>https://aorepo.org/sitemap-index.xml</publish-aorepo.org-warmup-get-url.2>
     <publish-aorepo.org-warmup-get-url.3>https://aorepo.org/?view=news</publish-aorepo.org-warmup-get-url.3>
@@ -130,6 +128,20 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
   <build>
     <plugins>
       <plugin>
+        <groupId>org.codehaus.mojo</groupId><artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <!-- Make the components of the current version available as parsedVersion.* properties -->
+          <execution>
+            <id>current.datetime</id><goals><goal>timestamp-property</goal></goals>
+            <configuration>
+              <name>current.datetime</name>
+              <locale>en_US</locale>
+              <pattern>yyyyMMdd-HHmmss</pattern>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId><artifactId>maven-dependency-plugin</artifactId>
         <configuration>
           <usedDependencies>
@@ -198,12 +210,8 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <profile>
       <id>jenkins</id>
       <properties>
-        <!-- Parallel deployment -->
-        <!-- Note: Tomcat server.xml/Host/autoDeploy must be set to "true" -->
-        <!-- Note: Tomcat server.xml/Host/undeployOldVersions must be set to "true" to clean-up old versions -->
-        <publish.tomcat7-maven-plugin.path>/ROOT##build-${jenkins.buildNumber}</publish.tomcat7-maven-plugin.path>
-        <publish.tomcat7-maven-plugin.update>false</publish.tomcat7-maven-plugin.update>
-        <publish.delete-tomcat-work.phase>none</publish.delete-tomcat-work.phase>
+        <!-- Use Jenkins build number -->
+        <publish.tomcat7-maven-plugin.parallel.deployment.version>build-${jenkins.buildNumber}</publish.tomcat7-maven-plugin.parallel.deployment.version>
       </properties>
     </profile>
     <profile>
@@ -218,10 +226,12 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
                 <configuration>
                   <charset>UTF-8</charset>
                   <server>tomcat7-maven-plugin-aorepo.org</server>
-                  <path>${publish.tomcat7-maven-plugin.path}</path>
-                  <update>${publish.tomcat7-maven-plugin.update}</update>
+                  <!-- Parallel deployment -->
+                  <!-- Note: Tomcat server.xml/Host/autoDeploy must be set to "true" -->
+                  <!-- Note: Tomcat server.xml/Host/undeployOldVersions must be set to "true" to clean-up old versions -->
+                  <path>/ROOT##${publish.tomcat7-maven-plugin.parallel.deployment.version}</path>
+                  <update>false</update>
                   <url>${tomcat7-maven-plugin-aorepo.org}</url>
-                  <!-- TODO: How to fail build when deploy failed with "FAIL - Failed to deploy application at context path"? -->
                 </configuration>
               </execution>
             </executions>
@@ -230,24 +240,32 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
             <groupId>org.apache.maven.plugins</groupId><artifactId>maven-antrun-plugin</artifactId>
             <executions>
               <execution>
-                <id>delete-tomcat-work</id><phase>${publish.delete-tomcat-work.phase}</phase><goals><goal>run</goal></goals>
-                <configuration>
-                  <target>
-                    <sleep seconds="1" />
-                    <exec executable="${publish-aorepo.org-ssh-path}" failonerror="true">
-                      <arg value="-oControlPath=none" />
-                      <arg value="-T" />
-                      <arg value="${publish-aorepo.org-tomcat-username}@${publish-aorepo.org-tomcat-hostname}" />
-                      <arg value="bash -c 'if [ -d &quot;$1&quot; ] ; then find &quot;$1&quot; &quot;(&quot; -name &quot;*.java&quot; -or -name &quot;*.class&quot; &quot;)&quot; -delete ; fi' delete-tomcat-work '${publish-aorepo.org-tomcat-work}'" />
-                    </exec>
-                  </target>
-                </configuration>
-              </execution>
-              <execution>
                 <id>warmup-sleep</id><phase>deploy</phase><goals><goal>run</goal></goals>
                 <configuration>
                   <target>
                     <sleep seconds="10" />
+                  </target>
+                </configuration>
+              </execution>
+              <execution>
+                <id>verify-parallel-deployment-version</id><phase>deploy</phase><goals><goal>run</goal></goals>
+                <configuration>
+                  <target>
+                    <mkdir dir="${project.build.directory}/verify-parallel-deployment-version" />
+                    <retry retrycount="12" retrydelay="15000">
+                      <sequential>
+                        <local name="parallel-deployment-version" />
+                        <get retries="1" src="${publish-aorepo.org-GetParallelDeploymentVersion-url}" dest="${project.build.directory}/verify-parallel-deployment-version/GetParallelDeploymentVersion" maxtime="120" httpusecaches="false" />
+                        <loadfile property="parallel-deployment-version" srcFile="${project.build.directory}/verify-parallel-deployment-version/GetParallelDeploymentVersion" />
+                        <condition property="parallel-deployment-version.matches">
+                          <equals arg1="${parallel-deployment-version}" arg2="${publish.tomcat7-maven-plugin.parallel.deployment.version}" />
+                        </condition>
+                        <fail
+                          message="Parallel deployment version mismatch.  Expected ${publish.tomcat7-maven-plugin.parallel.deployment.version}, got ${parallel-deployment-version}."
+                          unless="parallel-deployment-version.matches"
+                        />
+                      </sequential>
+                    </retry>
                   </target>
                 </configuration>
               </execution>
