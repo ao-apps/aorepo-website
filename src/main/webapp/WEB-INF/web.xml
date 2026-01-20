@@ -120,6 +120,24 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <url-pattern>/ao-servlet-util/tomcat/GetParallelDeploymentVersion</url-pattern>
   </servlet-mapping>
 
+  <!--
+    Gets the deployed WAR file MD5 fingerprint.  Used after deployment to catch
+    any silent failures by proactively verifying the correct artifact is running.
+  -->
+  <servlet>
+    <servlet-class>com.aoapps.servlet.tomcat.GetWarFileFingerprint</servlet-class>
+    <servlet-name>com.aoapps.servlet.tomcat.GetWarFileFingerprint</servlet-name>
+    <load-on-startup>1</load-on-startup>
+    <init-param>
+      <param-name>role</param-name>
+      <param-value>*</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>com.aoapps.servlet.tomcat.GetWarFileFingerprint</servlet-name>
+    <url-pattern>/ao-servlet-util/tomcat/GetWarFileFingerprint</url-pattern>
+  </servlet-mapping>
+
   <!-- Error Pages -->
   <!-- Using error pages from semanticcms-theme-documentation:/META-INF/web-fragment.xml -->
 

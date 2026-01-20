@@ -54,6 +54,7 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <!-- Default publish settings -->
     <publish.tomcat7-maven-plugin.parallel.deployment.version>${user.name}-${current.datetime}</publish.tomcat7-maven-plugin.parallel.deployment.version>
     <publish-aorepo.org-GetParallelDeploymentVersion-url>https://aorepo.org/ao-servlet-util/tomcat/GetParallelDeploymentVersion</publish-aorepo.org-GetParallelDeploymentVersion-url>
+    <publish-aorepo.org-GetWarFileFingerprint-url>https://aorepo.org/ao-servlet-util/tomcat/GetWarFileFingerprint</publish-aorepo.org-GetWarFileFingerprint-url>
     <publish-aorepo.org-warmup-get-url>https://aorepo.org/</publish-aorepo.org-warmup-get-url>
     <publish-aorepo.org-warmup-get-url.2>https://aorepo.org/sitemap-index.xml</publish-aorepo.org-warmup-get-url.2>
     <publish-aorepo.org-warmup-get-url.3>https://aorepo.org/?view=news</publish-aorepo.org-warmup-get-url.3>
@@ -269,6 +270,31 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
                         <fail
                           message="Parallel deployment version mismatch.  Expected ${publish.tomcat7-maven-plugin.parallel.deployment.version}, got ${parallel-deployment-version}."
                           unless="parallel-deployment-version.matches"
+                        />
+                      </sequential>
+                    </retry>
+                  </target>
+                </configuration>
+              </execution>
+              <execution>
+                <id>verify-war-file-fingerprint</id><phase>deploy</phase><goals><goal>run</goal></goals>
+                <configuration>
+                  <target>
+                    <!-- Compute the expected MD5 fingerprint -->
+                    <checksum file="${project.build.directory}/${project.build.finalName}.war" property="expected-war-file-fingerprint"/>
+                    <!-- Download and verify matches -->
+                    <mkdir dir="${project.build.directory}/verify-war-file-fingerprint" />
+                    <retry retrycount="12" retrydelay="15000">
+                      <sequential>
+                        <local name="war-file-fingerprint" />
+                        <get retries="1" src="${publish-aorepo.org-GetWarFileFingerprint-url}" dest="${project.build.directory}/verify-war-file-fingerprint/GetWarFileFingerprint" maxtime="120" httpusecaches="false" />
+                        <loadfile property="war-file-fingerprint" srcFile="${project.build.directory}/verify-war-file-fingerprint/GetWarFileFingerprint" />
+                        <condition property="war-file-fingerprint.matches">
+                          <equals arg1="${war-file-fingerprint}" arg2="${expected-war-file-fingerprint}" />
+                        </condition>
+                        <fail
+                          message="WAR file MD5 fingerprint mismatch.  Expected ${expected-war-file-fingerprint}, got ${war-file-fingerprint}."
+                          unless="war-file-fingerprint.matches"
                         />
                       </sequential>
                     </retry>
