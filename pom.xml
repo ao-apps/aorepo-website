@@ -255,7 +255,13 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
                     <retry retrycount="12" retrydelay="15000">
                       <sequential>
                         <local name="parallel-deployment-version" />
-                        <get retries="1" src="${publish-aorepo.org-GetParallelDeploymentVersion-url}" dest="${project.build.directory}/verify-parallel-deployment-version/GetParallelDeploymentVersion" maxtime="120" httpusecaches="false" />
+                        <get
+                          retries="1"
+                          src="${publish-aorepo.org-GetParallelDeploymentVersion-url}"
+                          dest="${project.build.directory}/verify-parallel-deployment-version/GetParallelDeploymentVersion"
+                          maxtime="120"
+                          httpusecaches="false"
+                        />
                         <loadfile property="parallel-deployment-version" srcFile="${project.build.directory}/verify-parallel-deployment-version/GetParallelDeploymentVersion" />
                         <condition property="parallel-deployment-version.matches">
                           <equals arg1="${parallel-deployment-version}" arg2="${publish.tomcat7-maven-plugin.parallel.deployment.version}" />
@@ -275,13 +281,31 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
                   <target>
                     <mkdir dir="${project.build.directory}/warmup-get-url" />
                     <retry retrycount="12" retrydelay="15000">
-                      <get retries="1" src="${publish-aorepo.org-warmup-get-url}" dest="${project.build.directory}/warmup-get-url/response" maxtime="120" httpusecaches="false" />
+                      <get
+                        retries="1"
+                        src="${publish-aorepo.org-warmup-get-url}"
+                        dest="${project.build.directory}/warmup-get-url/response"
+                        maxtime="120"
+                        httpusecaches="false"
+                      />
                     </retry>
                     <retry retrycount="12" retrydelay="15000">
-                      <get retries="1" src="${publish-aorepo.org-warmup-get-url.2}" dest="${project.build.directory}/warmup-get-url/response.2" maxtime="120" httpusecaches="false" />
+                      <get
+                        retries="1"
+                        src="${publish-aorepo.org-warmup-get-url.2}"
+                        dest="${project.build.directory}/warmup-get-url/response.2"
+                        maxtime="120"
+                        httpusecaches="false"
+                      />
                     </retry>
                     <retry retrycount="12" retrydelay="15000">
-                      <get retries="1" src="${publish-aorepo.org-warmup-get-url.3}" dest="${project.build.directory}/warmup-get-url/response.3" maxtime="120" httpusecaches="false" />
+                      <get
+                        retries="1"
+                        src="${publish-aorepo.org-warmup-get-url.3}"
+                        dest="${project.build.directory}/warmup-get-url/response.3"
+                        maxtime="120"
+                        httpusecaches="false"
+                      />
                     </retry>
                   </target>
                 </configuration>
