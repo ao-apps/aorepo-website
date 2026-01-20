@@ -52,7 +52,7 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <!-- Require secure session cookies in production -->
     <session.cookie.secure>true</session.cookie.secure>
     <!-- Default publish settings -->
-    <publish.tomcat7-maven-plugin.parallel.deployment.version>${user.name}-${current.datetime}</publish.tomcat7-maven-plugin.parallel.deployment.version>
+    <publish.tomcat7-maven-plugin.parallel.deployment.version>${current.datetime}-${user.name}</publish.tomcat7-maven-plugin.parallel.deployment.version>
     <publish-aorepo.org-GetParallelDeploymentVersion-url>https://aorepo.org/ao-servlet-util/tomcat/GetParallelDeploymentVersion</publish-aorepo.org-GetParallelDeploymentVersion-url>
     <publish-aorepo.org-GetWarFileFingerprint-url>https://aorepo.org/ao-servlet-util/tomcat/GetWarFileFingerprint</publish-aorepo.org-GetWarFileFingerprint-url>
     <publish-aorepo.org-warmup-get-url>https://aorepo.org/</publish-aorepo.org-warmup-get-url>
@@ -211,8 +211,8 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
     <profile>
       <id>jenkins</id>
       <properties>
-        <!-- Use Jenkins build number -->
-        <publish.tomcat7-maven-plugin.parallel.deployment.version>build-${jenkins.buildNumber}</publish.tomcat7-maven-plugin.parallel.deployment.version>
+        <!-- Include Jenkins build number -->
+        <publish.tomcat7-maven-plugin.parallel.deployment.version>${current.datetime}-${user.name}-build-${jenkins.buildNumber}</publish.tomcat7-maven-plugin.parallel.deployment.version>
       </properties>
     </profile>
     <profile>
