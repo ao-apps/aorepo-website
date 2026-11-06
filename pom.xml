@@ -124,6 +124,16 @@ along with aorepo.  If not, see <https://www.gnu.org/licenses/>.
         <checksumPolicy>fail</checksumPolicy>
       </releases>
       <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>aorepo-repository-snapshots</id>
+      <url>https://aorepo.org/maven2/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
         <checksumPolicy>fail</checksumPolicy>
       </snapshots>
     </repository>
